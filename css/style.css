@@ -1,0 +1,540 @@
+/** formata o corpo aqui */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/*parallax e backgrounds*/
+.bg{
+	background: url(../img/bgparallax.jpg);
+}
+
+.bg2{
+	background: url(../img/bgparallax2.jpg);
+}
+
+.bg3{
+	background: url(../img/bgparallax3.jpg);
+}
+
+.bg4{
+	background: url(../img/bgparallax4.jpg);
+}
+
+.parallax{
+	height: 80vh;
+	background-size: cover;
+  	background-attachment: fixed;
+  	border: 1px black;
+  	transform: scaleY(1.09);/*esse cara faz parecer que o fundo se mexe junto c/ os containers*/
+}
+
+#gambi{
+	height:120px;
+}
+
+/*conteúdo geral e cards com as imagens de serviços feitos*/
+.container-fluid{
+	position: relative;
+	height: 350px;
+	background-color: #FFF;
+}
+
+.container-fluid .jumbotron{
+	margin-top: 200px;
+	height: 200px;
+	color: #FFF;
+}
+
+/*animações e transições de imagens, etc*/
+
+#cards{
+	height: 750px;
+}
+.carousel {
+  margin-top: 25px;
+}
+
+.carousel-cell {
+  width: 90%;
+  height: 550px;
+  margin-right: 10px;
+  border-radius: 15px;
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+
+.transicao{
+	width: 100%;
+	height: 550px;
+}
+
+.transicao:hover{
+	transform: scale(1.01);
+	transition: 0.5s all cubic-bezier();
+	box-shadow: 0 15px 55px black;
+}
+
+.transicao:hover::before{
+	opacity: 5;
+}
+
+
+/*carrossel*/
+.carousel-inner{
+	margin-top: 30px;
+	height: 90vh;
+}
+
+.carousel-item{
+	filter: blur(2px);
+}
+
+.text-center{
+	font-size: 2.5em;
+	color: #FFF;
+}
+
+.texto-do-meio{
+	font-size: 4rem;
+}
+
+.carousel-caption{
+	background: black;
+	border-radius: 25px;
+	opacity: 0.9;
+}
+
+
+/*rodapé*/
+#footer{
+	clear: both;
+	height: 250px;
+}
+
+.redes{
+	width: 25px;
+	height: 25px;
+	color: #FFF;
+}
+
+/*outros*/
+#iframe{
+	height: 750px;
+}
+
+.contato:link{
+	text-decoration: none;
+	color: black;
+}
+
+/*aqui estou utilizando um css apenas para responsividade, por questão de organização*/
+/*----------------------------------------------------------------------------------*/
+/*telas pequenas de celular*/
+@media screen and (min-width: 320px) and (max-width: 575.98px) {
+
+
+.carousel-inner{
+	margin-top: 50px;
+
+}
+
+.d-md-block{
+	height: 33.9vh;
+}
+
+.d-block{
+	height: 30vh;
+}
+
+.carousel-caption{
+
+	background: black;
+	border-radius: 5px;
+	opacity: 0.9;
+	font-size: 0.25rem;
+
+}
+
+
+.text-center{
+	color: #FFF;
+	line-height: 1.05;
+}
+
+.container-fluid{
+	margin-top: 150px;
+	height: 920px;
+}
+
+#cont-contato{
+	padding-top: 70px;
+}
+
+#cards{
+	height: 750px;
+}
+
+
+.contato{
+	font-size: 1.2rem;
+}
+
+.carousel{
+  width: 100%;
+  height: 250px;
+
+}
+.carousel-cell{
+  width: 100%;
+  height: 250px;
+  border-radius: 15px;
+}
+.transicao{
+	width: 100%;
+	height: 250px;
+}
+
+.texto-do-meio{
+	font-size: 0.1rem;
+}
+
+#iframe{
+	height: 750px;
+}
+
+.iframe-resp{
+	width: 80%;
+	height: 500px;
+
+ }
+
+}
+
+
+/*telas pequenas, ainda, mas para celulares um pouco maiores e alguns tablets*/
+ @media screen and (min-width: 576px) and (max-width: 767.98px) {
+
+.carousel-inner{
+	margin-top: 10px;
+	height: 50vh;
+}
+
+.d-md-block{
+	margin-top: 10px;
+}
+
+.d-block{
+	height: 90vh;
+}
+
+.carousel-caption{
+	margin-top: 15px;
+	background: black;
+	border-radius: 5px;
+	opacity: 0.9;
+	font-size: 0.50rem;
+}
+
+.text-center{
+	margin-top: 5px;
+	color: #FFF;
+}
+
+.texto-do-meio{
+	font-size: 2rem;
+}
+
+#cont-index{
+	margin-top: 350px;
+}
+
+#cont-contato{
+	margin-top: 100px;
+}
+
+.container-fluid{
+	height: 550px;
+}
+
+#cards{
+	height: 550px;
+
+}
+
+.carousel-cell{
+	width: 100%;
+  	height: 450px;
+}
+
+
+#iframe{
+	height: 750px;
+}
+
+.iframe-resp{
+	width: 80%;
+	height: 500px;
+
+ }
+
+ }
+
+@media screen and (max-width: 768.98px) and (max-width: 990.98px){
+
+.carousel-inner{
+	margin-top: 10px;
+	height: 70vh;
+}
+
+.d-md-block{
+	margin-top: 10px;
+}
+
+.d-block{
+	height: 90vh;
+}
+
+.carousel-caption{
+	margin-top: 15px;
+	background: black;
+	border-radius: 5px;
+	opacity: 0.9;
+	font-size: 0.80rem;
+}
+
+.text-center{
+	margin-top: 5px;
+	color: #FFF;
+}
+
+.texto-do-meio{
+	font-size: 1rem;
+}
+
+#cont-index{
+	margin-top: 350px;
+}
+
+#cont-contato{
+	margin-top: 100px;
+}
+
+.container-fluid{
+	height: 450px;
+}
+
+#cards{
+	height: 850px;
+
+}
+
+.carousel-cell{
+	width: 100%;
+  	height: 250px;
+}
+
+.carousel{
+	height: 250px;
+}
+
+#iframe{
+	height: 750px;
+}
+
+.iframe-resp{
+	width: 80%;
+	height: 500px;
+
+ }
+
+
+
+}
+
+
+/*tablets pequenos e médios*/
+ @media screen and (max-width: 991.98px) and (max-width: 1198.98px){
+
+
+.carousel-inner{
+	margin-top: 10px;
+	height: 70vh;
+}
+
+.d-md-block{
+	margin-top: 10px;
+}
+
+.d-block{
+	height: 90vh;
+}
+
+.carousel-caption{
+	margin-top: 15px;
+	background: black;
+	border-radius: 5px;
+	opacity: 0.9;
+}
+
+.text-center{
+	margin-top: 5px;
+	font-size: 1.5em;
+	color: #FFF;
+}
+
+.texto-do-meio{
+	font-size: 4rem;
+}
+
+.container-fluid{
+	height: 250px;
+}
+
+#cards{
+	height: 750px;
+
+}
+
+.carousel-cell{
+	width: 100%;
+  	height: 490px;
+}
+
+
+#iframe{
+	height: 750px;
+}
+
+.iframe-resp{
+	width: 80%;
+	height: 500px;
+
+ }
+
+
+ }
+
+ @media screen and (max-width: 1199.98px) {
+
+
+ .carousel-inner{
+	margin-top: 10px;
+	height: 70vh;
+}
+
+.d-md-block{
+	margin-top: 10px;
+}
+
+.d-block{
+	height: 90vh;
+}
+
+.carousel-caption{
+	margin-top: 15px;
+	background: black;
+	border-radius: 5px;
+	opacity: 0.9;
+}
+
+.text-center{
+	margin-top: 5px;
+	font-size: 2em;
+	color: #FFF;
+}
+
+.container-fluid{
+	height: 350px;
+}
+
+#cards{
+	height: 650px;
+
+}
+
+.carousel-cell{
+	width: 100%;
+  	height: 490px;
+}
+
+
+#iframe{
+	height: 750px;
+}
+
+.iframe-resp{
+	width: 80%;
+	height: 500px;
+
+ }
+
+
+ }
+
+ @media screen and (min-width: 1200px) {
+
+
+
+ .carousel-inner{
+	margin-top: 10px;
+	height: 70vh;
+}
+
+.d-md-block{
+	margin-top: 10px;
+}
+
+.d-block{
+	height: 90vh;
+}
+
+.carousel-caption{
+	margin-top: 15px;
+	background: black;
+	border-radius: 5px;
+	opacity: 0.9;
+}
+
+.text-center{
+	margin-top: 5px;
+	font-size: 2em;
+	color: #FFF;
+}
+
+.container-fluid{
+	height: 350px;
+}
+
+#cards{
+	height: 650px;
+
+}
+
+.carousel-cell{
+	width: 100%;
+  	height: 490px;
+}
+
+
+#iframe{
+	height: 750px;
+}
+
+.iframe-resp{
+	width: 80%;
+	height: 500px;
+
+ }
+
+ }
