@@ -9,7 +9,10 @@
      
     </div>
      <div class="container-fluid">
-        
+        <h3>Orçamento sem compromiso e atendimento à domicílio, 
+          serviço de qualidade há mais de 20 anos no mercado.</h3>
+          <b-icon icon="tools" class="h2"></b-icon>
+          <b-icon icon="lightning" class="h2"></b-icon>
       </div>
       <div class="parallax"></div>
   </div>
@@ -44,7 +47,7 @@ export default {
 }
 
 .container-fluid{
-  height: 30vh;
+  height: 130vh;
   position: relative;
 }
 
