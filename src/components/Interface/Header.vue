@@ -2,7 +2,7 @@
   <div>
   <b-navbar type="dark" variant="dark">
     <b-navbar-nav>
-      <b-nav-item href="#">Home</b-nav-item>
+      <b-nav-item @click="$router.push('/')">Home</b-nav-item>
 
       <b-nav-item-dropdown text="Mais">
         <b-dropdown-item href="#">Contato</b-dropdown-item>
