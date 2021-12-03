@@ -35,11 +35,9 @@
           class="cards-container"
         >
           <b-card-text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            Instalações elétricas de baixa tensão, seguindo a norma NBR 5410 da
+            ABNT, garantindo sua segurança
           </b-card-text>
-
-          <b-button href="#" variant="primary">Go somewhere</b-button>
         </b-card>
 
         <b-card
@@ -52,11 +50,9 @@
           class="cards-container"
         >
           <b-card-text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            Serviços feitos prezando a excelência visando melhoria na qualidade
+            e funcionalidade do seu comércio.
           </b-card-text>
-
-          <b-button href="#" variant="primary">Go somewhere</b-button>
         </b-card>
 
         <b-card
@@ -69,11 +65,9 @@
           class="cards-container"
         >
           <b-card-text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            Agregando segurança a edifícios e prédios, visando o bem estar das
+            pessoas.
           </b-card-text>
-
-          <b-button href="#" variant="primary">Go somewhere</b-button>
         </b-card>
       </div>
       <br />
@@ -83,19 +77,17 @@
       </h3>
       <div>
         <b-card
-          title="Automação"
+          title="Serviços de automação"
           :img-src="image_card_local[3].src"
           img-alt="Image"
           img-top
           tag="article"
-          style="max-width: 20rem;"
-          class="cards-container"
+          class="cards-container cards-soluction card-img-soluction"
         >
           <b-card-text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            Reduza custos, garanta a segurança, e traga melhor qualidade na sua
+            produção através da automação
           </b-card-text>
-
           <b-button href="#" variant="primary">Go somewhere</b-button>
         </b-card>
 
@@ -105,14 +97,12 @@
           img-alt="Image"
           img-top
           tag="article"
-          style="max-width: 20rem;"
-          class="cards-container"
+          class="cards-container cards-soluction card-img-soluction"
         >
           <b-card-text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            Um projeto elétrico bem articulado influencia positivamente em todas
+            as etapas de uma instalação elétrica
           </b-card-text>
-
           <b-button href="#" variant="primary">Go somewhere</b-button>
         </b-card>
 
@@ -122,28 +112,29 @@
           img-alt="Image"
           img-top
           tag="article"
-          style="max-width: 20rem;"
-          class="cards-container"
+          class="cards-container cards-soluction card-img-soluction"
         >
           <b-card-text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            Instalação do padrão de entrada, de acordo com as concessionárias
+            responsáveis pela distribuição de energia elétrica da sua região
           </b-card-text>
-
-          <b-button href="#" variant="primary">Go somewhere</b-button>
+          <b-button
+            @click="$router.push('/servicos/padrao-entrada')"
+            variant="primary"
+            >Go somewhere</b-button
+          >
         </b-card>
         <b-card
           title="Atendimento de energência 24h"
-          :img-src="image_card_local[2].src"
+          :img-src="image_card_local[6].src"
           img-alt="Image"
           img-top
           tag="article"
-          style="max-width: 20rem;"
-          class="cards-container"
+          class="cards-container cards-soluction card-img-soluction"
         >
           <b-card-text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            Atendimento de emergência 24 horas, perzando sua segurança e a
+            qualidade dos nossos serviços
           </b-card-text>
 
           <b-button href="#" variant="primary">Go somewhere</b-button>
@@ -175,11 +166,15 @@ export default {
         },
         {
           src:
-            "https://drive.google.com/uc?export=view&id=1wr7Kmkx55bhSQ1aN2oK5OzZ1IHv1lm8q"
+            "https://drive.google.com/uc?export=view&id=1tJsJR-PJbp-2-46cnji_0cD7X7in76-f"
         },
         {
           src:
-            "https://drive.google.com/uc?export=view&id=1wr7Kmkx55bhSQ1aN2oK5OzZ1IHv1lm8q"
+            "https://drive.google.com/uc?export=view&id=1XBOw1kS7Vy-n4kLclZBhV8B9w3X_sIva"
+        },
+        {
+          src:
+            "https://drive.google.com/uc?export=view&id=1TaVU1CNVAqP8jqN_a_szkd49GaCuAh5Q"
         },
         {
           src:
@@ -206,6 +201,28 @@ export default {
   height: 50vh !important;
 }
 
+.card-img-top.card-img-soluction {
+  height: 40vh !important;
+}
+
+.card.cards-container.cards-soluction {
+  max-width: 280px !important;
+  position: relative;
+  display: inline-block !important;
+  font-size: 14px;
+}
+
+.btn.btn-danger:hover {
+  border: 1px solid #e57e7e !important;
+  transform: scale(1) !important;
+  box-shadow: 0 5px 15px #e57e7e !important;
+}
+.card:hover {
+  border: 1px solid black !important;
+  transform: scale(1) !important;
+  box-shadow: 0 5px rgba(0, 0, 0, 0.6) !important;
+}
+
 .card.cards-container {
   background: whitesmoke;
   border: 0.9px solid;
@@ -220,8 +237,9 @@ export default {
 .jumbotron {
   background: url("https://drive.google.com/uc?export=view&id=1GC9LZ3Kz23W3lJRR-qv1UKPIZiMeLMBj")
     no-repeat fixed center;
-  background-size: contain;
-  height: 80vh;
+  background-size: cover;
+  height: 100vh;
+  filter: brightness(95.8%);
 }
 
 #banner-fadeIn {
