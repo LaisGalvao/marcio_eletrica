@@ -1,23 +1,20 @@
 <template>
   <b-card
-    title="Card Title"
+    :title="title"
     :img-src="image"
     :img-alt="alt"
     img-top
     tag="article"
     style="max-width: 20rem;"
-    class="mb-2"
+    class="image-card "
   >
     <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+     {{desc}}
     </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
   </b-card>
 </template>
 <script>
 export default {
-  props: ["image", "alt"]
+  props: ["title", "image", "alt", "card_class", "desc"]
 };
 </script>

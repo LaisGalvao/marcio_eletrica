@@ -3,68 +3,224 @@
     <Header />
     <div class="desce-jumbo">
       <b-jumbotron
-        text-variant="light"
+        text-variant="dark"
         header="Galvão Elétrica"
         lead="Eletricista Residencial, Predial e Industrial"
         id="banner-fadeIn"
       >
-        <p>Mais informações</p>
         <b-button variant="danger" href="#" @click="scrollIntoPage"
-          >More Info</b-button
+          >Mais informações</b-button
         >
       </b-jumbotron>
     </div>
     <div class="container-fluid">
       <h3 id="paragraph-fadeIn">
-        Serviço de qualidade há mais de 20 anos no mercado.
+        Serviço de qualidade há mais de 25 anos no mercado.
       </h3>
       <b-icon icon="tools" class="h2"></b-icon>
       <b-icon icon="lightning" class="h2"></b-icon>
+      <br />
+      <hr />
+      <h3 id="paragraph-fadeIn">
+        Realizamos serviços em:
+      </h3>
+      <div>
+        <b-card
+          title="Residências"
+          :img-src="image_card_local[0].src"
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 20rem;"
+          class="cards-container"
+        >
+          <b-card-text>
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </b-card-text>
 
-      <div v-for="card in getCards" :key="card.route">
-        <Cards :img-src="card.src" :alt="card.alt" />
+          <b-button href="#" variant="primary">Go somewhere</b-button>
+        </b-card>
+
+        <b-card
+          title="Comércios"
+          :img-src="image_card_local[1].src"
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 20rem;"
+          class="cards-container"
+        >
+          <b-card-text>
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </b-card-text>
+
+          <b-button href="#" variant="primary">Go somewhere</b-button>
+        </b-card>
+
+        <b-card
+          title="Prédios"
+          :img-src="image_card_local[2].src"
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 20rem;"
+          class="cards-container"
+        >
+          <b-card-text>
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </b-card-text>
+
+          <b-button href="#" variant="primary">Go somewhere</b-button>
+        </b-card>
+      </div>
+      <br />
+      <hr />
+      <h3 id="paragraph-fadeIn">
+        Também apresentamos soluções em:
+      </h3>
+      <div>
+        <b-card
+          title="Automação"
+          :img-src="image_card_local[3].src"
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 20rem;"
+          class="cards-container"
+        >
+          <b-card-text>
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </b-card-text>
+
+          <b-button href="#" variant="primary">Go somewhere</b-button>
+        </b-card>
+
+        <b-card
+          title="Execução de projetos elétricos"
+          :img-src="image_card_local[4].src"
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 20rem;"
+          class="cards-container"
+        >
+          <b-card-text>
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </b-card-text>
+
+          <b-button href="#" variant="primary">Go somewhere</b-button>
+        </b-card>
+
+        <b-card
+          title="Projetos para padrão de entrada de energia"
+          :img-src="image_card_local[5].src"
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 20rem;"
+          class="cards-container"
+        >
+          <b-card-text>
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </b-card-text>
+
+          <b-button href="#" variant="primary">Go somewhere</b-button>
+        </b-card>
+        <b-card
+          title="Atendimento de energência 24h"
+          :img-src="image_card_local[2].src"
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 20rem;"
+          class="cards-container"
+        >
+          <b-card-text>
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </b-card-text>
+
+          <b-button href="#" variant="primary">Go somewhere</b-button>
+        </b-card>
       </div>
     </div>
-    <div class="parallax"></div>
   </div>
 </template>
 
 <script>
 import Cards from "@/components/Interface/Cards";
 import Header from "@/components/Interface/Header";
-//import images from "../store/modules/images";
-
 export default {
   name: "HelloWorld",
   data() {
     return {
-      card: null
+      image_card_local: [
+        {
+          src:
+            "https://drive.google.com/uc?export=view&id=1rl3RgWFu_VYUlNlj9Y2XYG3SCz0uDpt-"
+        },
+        {
+          src:
+            "https://drive.google.com/uc?export=view&id=19mSrBevky7pAqtFF2bqCgfNhlQ5j3kHC"
+        },
+        {
+          src:
+            "https://drive.google.com/uc?export=view&id=1H9XSbGNxIUGKlxeAP8wXlRm5r8ttWPwu"
+        },
+        {
+          src:
+            "https://drive.google.com/uc?export=view&id=1wr7Kmkx55bhSQ1aN2oK5OzZ1IHv1lm8q"
+        },
+        {
+          src:
+            "https://drive.google.com/uc?export=view&id=1wr7Kmkx55bhSQ1aN2oK5OzZ1IHv1lm8q"
+        },
+        {
+          src:
+            "https://drive.google.com/uc?export=view&id=1wr7Kmkx55bhSQ1aN2oK5OzZ1IHv1lm8q"
+        }
+      ]
     };
   },
   components: { Header, Cards },
-   computed: {
-    getCards() {
-      console.log(this.$store.getters.images);
-      return this.card = this.$store.getters.images
-    }
-  },
+  computed: {},
   methods: {
     scrollIntoPage(p) {
       p =
         document.getElementById("paragraph-fadeIn").getBoundingClientRect().y -
         80;
       window.scrollTo(0, p);
-      console.log(images.state);
     }
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+.card-img-top {
+  height: 50vh !important;
+}
+
+.card.cards-container {
+  background: whitesmoke;
+  border: 0.9px solid;
+  border-color: gray;
+  border-radius: 15px;
+  position: relative;
+  margin: 1%;
+  opacity: 0.9;
+  display: inline-flex !important;
+}
+
 .jumbotron {
-  background: url("../assets/banner.png") no-repeat fixed center;
-  background-size: cover;
+  background: url("https://drive.google.com/uc?export=view&id=1GC9LZ3Kz23W3lJRR-qv1UKPIZiMeLMBj")
+    no-repeat fixed center;
+  background-size: contain;
   height: 80vh;
 }
 
@@ -103,6 +259,6 @@ export default {
 .container-fluid {
   height: 130vh;
   position: absolute;
-  margin-top: 20%;
+  margin-top: 5%;
 }
 </style>
