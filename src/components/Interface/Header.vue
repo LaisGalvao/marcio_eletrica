@@ -1,13 +1,13 @@
 <template>
   <div>
-  <b-navbar type="dark" variant="dark">
+  <b-navbar type="dark" variant="dark" fixed>
     <b-navbar-nav>
-      <b-nav-item @click="$router.push('/')">Home</b-nav-item>
+      <b-nav-item class="text-center" @click="$router.push('/')">Home</b-nav-item>
 
-      <b-nav-item-dropdown text="Mais">
+   <!--    <b-nav-item-dropdown text="Mais">
         <b-dropdown-item href="#">Contato</b-dropdown-item>
         <b-dropdown-item href="#">Fale Comigo</b-dropdown-item>
-      </b-nav-item-dropdown>
+      </b-nav-item-dropdown> -->
     </b-navbar-nav>
   </b-navbar>
 </div>

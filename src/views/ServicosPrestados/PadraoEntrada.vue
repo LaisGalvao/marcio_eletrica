@@ -6,6 +6,7 @@
         title="Projetos para padrão de entrada de energia"
         lead="Porque fazer e qual a imprtância?"
         class="padrao-entrada"
+        text-variant="dark"
       />
     </div>
     <div class="container">
@@ -25,6 +26,7 @@
         também executamos projetos já elaborados com mais de 3 medidores.
       </p>
     </div>
+    <Contato />
   </div>
 </template>
 <style>
@@ -38,15 +40,18 @@
 }
 .padrao-entrada {
   background: url(https://drive.google.com/uc?export=view&id=1TaVU1CNVAqP8jqN_a_szkd49GaCuAh5Q);
+  filter: brightness(95.8%);
 }
 </style>
 <script>
+import Contato from "@/components/Interface/Contato"
 import Header from "@/components/Interface/Header";
 import JumbotronBanner from "@/components/Interface/JumbotronBanner";
 export default {
   components: {
     JumbotronBanner: JumbotronBanner,
-    Header: Header
+    Header: Header,
+    Contato: Contato
   }
 };
 </script>

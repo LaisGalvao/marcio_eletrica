@@ -88,7 +88,11 @@
             Reduza custos, garanta a segurança, e traga melhor qualidade na sua
             produção através da automação
           </b-card-text>
-          <b-button href="#" variant="primary">Go somewhere</b-button>
+          <b-button
+            @click="$router.push('/servicos/padrao-entrada')"
+            variant="primary"
+            >Saiba mais</b-button
+          >
         </b-card>
 
         <b-card
@@ -103,7 +107,11 @@
             Um projeto elétrico bem articulado influencia positivamente em todas
             as etapas de uma instalação elétrica
           </b-card-text>
-          <b-button href="#" variant="primary">Go somewhere</b-button>
+           <b-button
+            @click="$router.push('/servicos/padrao-entrada')"
+            variant="primary"
+            >Saiba mais</b-button
+          >
         </b-card>
 
         <b-card
@@ -121,7 +129,7 @@
           <b-button
             @click="$router.push('/servicos/padrao-entrada')"
             variant="primary"
-            >Go somewhere</b-button
+            >Saiba mais</b-button
           >
         </b-card>
         <b-card
@@ -137,7 +145,11 @@
             qualidade dos nossos serviços
           </b-card-text>
 
-          <b-button href="#" variant="primary">Go somewhere</b-button>
+          <b-button
+            @click="$router.push('/servicos/padrao-entrada')"
+            variant="primary"
+            >Saiba mais</b-button
+          >
         </b-card>
       </div>
     </div>
