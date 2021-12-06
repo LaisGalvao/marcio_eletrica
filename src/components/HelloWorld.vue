@@ -89,7 +89,7 @@
             produção através da automação
           </b-card-text>
           <b-button
-            @click="$router.push('/servicos/padrao-entrada')"
+            @click="$router.push('/servicos/automacao')"
             variant="primary"
             >Saiba mais</b-button
           >
@@ -107,8 +107,8 @@
             Um projeto elétrico bem articulado influencia positivamente em todas
             as etapas de uma instalação elétrica
           </b-card-text>
-           <b-button
-            @click="$router.push('/servicos/padrao-entrada')"
+          <b-button
+            @click="$router.push('/servicos/projetos-eletricos')"
             variant="primary"
             >Saiba mais</b-button
           >
@@ -146,7 +146,7 @@
           </b-card-text>
 
           <b-button
-            @click="$router.push('/servicos/padrao-entrada')"
+            @click="$router.push('/servicos/emergencia')"
             variant="primary"
             >Saiba mais</b-button
           >
