@@ -21,7 +21,7 @@
         contato para saber mais.
       </p>
     </div>
-    <Contato />
+    <ModalContato />
   </div>
 </template>
 <style>
@@ -44,14 +44,14 @@
 }
 </style>
 <script>
-import Contato from "@/components/Interface/Contato";
+import ModalContato from "@/views/ModalContato";
 import Header from "@/components/Interface/Header";
 import JumbotronBanner from "@/components/Interface/JumbotronBanner";
 export default {
   components: {
     JumbotronBanner: JumbotronBanner,
     Header: Header,
-    Contato: Contato
+    ModalContato: ModalContato
   }
 };
 </script>
