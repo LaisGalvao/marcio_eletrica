@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="form-contato" @submit="sendMail">
+    <form class="form-contato">
       <span>Nome:</span>
       <label for="">
         <b-form-input type="text" v-model="form.name" />
@@ -16,6 +16,9 @@
         <b-form-input type="tel" v-model="form.tel" />
       </label>
 
+      <span>Selecione um serviço:</span>
+      <b-form-select v-model="selected" :options="form.options"></b-form-select>
+
       <span>Descreva seu problema:</span>
       <label for="">
         <b-form-textarea
@@ -29,8 +32,7 @@
       <b-form-file
         class="mt-3"
         plain
-        v-model="file1"
-        :state="Boolean(file1)"
+        v-model="form.file"
         placeholder="Escolha um arquivo ou arraste aqui..."
         drop-placeholder="Solte um arquivo aqui..."
         >Anexar</b-form-file
@@ -44,7 +46,7 @@
       <b-button
         variant="outline-success"
         class="btn-modal-contato"
-        @click="toggleModal"
+        @click="sendMail"
         >Enviar</b-button
       >
     </form>
@@ -54,17 +56,29 @@
 export default {
   data() {
     return {
+      selected: null,
       form: {
         name: "",
         email: "",
         tel: "",
-        msg: ""
+        msg: "",
+        file: null,
+        options: [
+          { value: null, text: "Please select an option" },
+          { value: "a", text: "This is First option" },
+          { value: "b", text: "Selected Option" },
+          { value: { C: "3PO" }, text: "This is an option with object value" },
+          { value: "d", text: "This one is disabled", disabled: true }
+        ]
       }
     };
   },
   methods: {
     sendMail() {
       localStorage.setItem("form", JSON.stringify(this.form));
+    },
+    hideModal() {
+      this.$root.$emit("bv::hide::modal", "modal-1", "#btnShow");
     }
   }
 };

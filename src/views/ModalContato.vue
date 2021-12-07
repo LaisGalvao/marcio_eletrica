@@ -5,7 +5,7 @@
       possíve!</b-button
     >
 
-    <b-modal id="modal-1" hide-footer title="Entre em contato" class="text-center">
+    <b-modal id="modal-1" hide-footer title="Envie uma mensagem!" class="text-center">
       <Contato />
     </b-modal>
   </div>
