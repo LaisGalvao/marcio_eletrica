@@ -35,12 +35,13 @@
 }
 
 .jumbotron {
-  height: 80vh;
+  height: 70vh;
 }
 
 .projeto-eletrico {
   background: url(https://drive.google.com/uc?export=view&id=1XBOw1kS7Vy-n4kLclZBhV8B9w3X_sIva);
-  filter: brightness(70.8%);
+  filter: brightness(50.8%);
+  background-size: contain;
 }
 </style>
 <script>

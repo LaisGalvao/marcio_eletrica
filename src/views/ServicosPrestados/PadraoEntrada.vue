@@ -39,12 +39,12 @@
   margin-top: 45px;
 }
 .jumbotron {
-  height: 80vh;
+  height: 70vh;
 }
 
 .padrao-entrada {
   background: url(https://drive.google.com/uc?export=view&id=1TaVU1CNVAqP8jqN_a_szkd49GaCuAh5Q);
-  filter: brightness(70.8%);
+  filter: brightness(50.8%);
 }
 </style>
 <script>

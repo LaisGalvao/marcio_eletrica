@@ -90,7 +90,7 @@
           </b-card-text>
           <b-button
             @click="$router.push('/servicos/automacao')"
-            variant="primary"
+            variant="warning"
             >Saiba mais</b-button
           >
         </b-card>
@@ -109,7 +109,7 @@
           </b-card-text>
           <b-button
             @click="$router.push('/servicos/projetos-eletricos')"
-            variant="primary"
+            variant="warning"
             >Saiba mais</b-button
           >
         </b-card>
@@ -128,29 +128,33 @@
           </b-card-text>
           <b-button
             @click="$router.push('/servicos/padrao-entrada')"
-            variant="primary"
+            variant="warning"
             >Saiba mais</b-button
           >
         </b-card>
-        <b-card
-          title="Atendimento de energência 24h"
-          :img-src="image_card_local[6].src"
-          img-alt="Image"
-          img-top
-          tag="article"
-          class="cards-container cards-soluction card-img-soluction"
-        >
-          <b-card-text>
-            Atendimento de emergência 24 horas, perzando sua segurança e a
-            qualidade dos nossos serviços
-          </b-card-text>
+      </div>
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <b-card
+            title="Atendimento de energência 24h"
+            :img-src="image_card_local[6].src"
+            img-alt="Image"
+            img-top
+            tag="article"
+            class="card-emergency card-img-emergency"
+          >
+            <b-card-text>
+              Atendimento de emergência 24 horas, perzando sua segurança e a
+              qualidade dos nossos serviços
+            </b-card-text>
 
-          <b-button
-            @click="$router.push('/servicos/emergencia')"
-            variant="primary"
-            >Saiba mais</b-button
-          >
-        </b-card>
+            <b-button
+              @click="$router.push('/servicos/emergencia')"
+              variant="warning"
+              >Saiba mais</b-button
+            >
+          </b-card>
+        </div>
       </div>
     </div>
   </div>
@@ -224,10 +228,10 @@ export default {
   font-size: 14px;
 }
 
-.btn.btn-danger:hover {
+.btn.btn-warning:hover {
   border: 1px solid #e57e7e !important;
   transform: scale(1) !important;
-  box-shadow: 0 5px 15px #e57e7e !important;
+  box-shadow: 0 5px 15px #e1c46d !important;
 }
 .card:hover {
   border: 1px solid black !important;
@@ -246,11 +250,23 @@ export default {
   display: inline-flex !important;
 }
 
+.card-emergency {
+  width: 70% !important;
+}
+
+@media screen and (max-width: 992px) {
+  .card-emergency {
+    width: 100% !important;
+  }
+}
+.card-emergency .card-img-top .card-img-emergency img {
+  height: 70vh !important;
+}
 .jumbotron {
   background: url("https://drive.google.com/uc?export=view&id=1GC9LZ3Kz23W3lJRR-qv1UKPIZiMeLMBj")
     no-repeat fixed center;
   background-size: cover;
-  height: 100vh;
+  height: 70vh;
   filter: brightness(95.8%);
 }
 

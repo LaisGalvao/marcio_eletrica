@@ -1,8 +1,11 @@
 <template>
   <div>
-    <b-button v-b-modal.modal-1>Contato!</b-button>
+    <b-button v-b-modal.modal-1 variant="warning" class="btn-contato"
+      >Preencha o formulário, responderemos sua solicitação o mais rápido
+      possíve!</b-button
+    >
 
-    <b-modal id="modal-1" title="Entre em contato" class="text-center">
+    <b-modal id="modal-1" hide-footer title="Entre em contato" class="text-center">
       <Contato />
     </b-modal>
   </div>
@@ -15,3 +18,9 @@ export default {
   }
 };
 </script>
+<style scoped>
+  .btn-contato{
+    margin: 2%;
+    width: 30%;
+  }
+</style>

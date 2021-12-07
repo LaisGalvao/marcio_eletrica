@@ -27,7 +27,7 @@
     <ModalContato />
   </div>
 </template>
-<style>
+<style scoped>
 .paragraph {
   text-align: justify;
   font-size: 16px;
@@ -37,12 +37,12 @@
   margin-top: 45px;
 }
 .jumbotron {
-  height: 80vh;
+  height: 70vh;
 }
 
 .emergencia {
   background: url(https://drive.google.com/uc?export=view&id=1wr7Kmkx55bhSQ1aN2oK5OzZ1IHv1lm8q);
-  filter: brightness(70.8%);
+ filter: brightness(50.8%);
 }
 </style>
 <script>

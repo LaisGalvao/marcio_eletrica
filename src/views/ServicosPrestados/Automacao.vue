@@ -17,42 +17,57 @@
       </p>
       <p class="paragraph">
         Soluções de automação elétrica podem ser aplicadas na indústria, em
-        casas, comércios, prédios, e até chácaras.
-        Algumas aplicações comuns em que se encaixam sistemas de automação elétrica são:
-        <ul>
-          <li>Bombas de recalque</li>
-          <li>Sistemas de polos</li>
-          <li>Cisternas</li>
-          <li>Sistemas de alarme de incêndio</li>
-          <li>Partida de motores</li>
-        </ul>
+        casas, comércios, prédios, e até chácaras. Algumas aplicações comuns em
+        que se encaixam sistemas de automação elétrica são:
       </p>
-      <p class="paragraph">
-         Trabalhamos com soluções de automação, entre em
-        contato para saber mais.
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <b-card
+            title="Bombas de recalque"
+            img-src="https://drive.google.com/uc?export=view&id=12zfOOqC4mLnPOPm8dFV4Vz5NkkxyN1aR"
+            img-alt="Image"
+            img-top
+            tag="article"
+            class="cards-container cards-soluction card-img-soluction"
+          >
+          </b-card>
+          <b-card
+            title="Cisternas e poços"
+            img-src="https://drive.google.com/uc?export=view&id=1RFJt-7GxT6eSEMWbeu3biWe7Zr7D4_Jo"
+            img-alt="Image"
+            img-top
+            tag="article"
+            class="cards-container cards-soluction card-img-soluction"
+          >
+          </b-card>
+          <b-card
+            title="Alarme de incêndio"
+            img-src="https://drive.google.com/uc?export=view&id=1rzmzS-8qmKMyO1XNUmHmOJhiE26deX2e"
+            img-alt="Image"
+            img-top
+            tag="article"
+            class="cards-container cards-soluction card-img-soluction"
+          >
+          </b-card>
+          <b-card
+            title="Partida de motores"
+            img-src="https://drive.google.com/uc?export=view&id=1ffL-UJHfO-The-HQhs243tsKe_PUFuwB"
+            img-alt="Image"
+            img-top
+            tag="article"
+            class="cards-container cards-soluction card-img-soluction"
+          >
+          </b-card>
+        </div>
+      </div>
+
+      <p class="paragraph text-center">
+        Trabalhamos com soluções de automação, entre em contato para saber mais.
       </p>
     </div>
     <ModalContato />
   </div>
 </template>
-<style>
-.paragraph {
-  text-align: justify;
-  font-size: 16px;
-  margin: 3%;
-}
-.desce-jumbo {
-  margin-top: 45px;
-}
-
-.jumbotron {
-  height: 80vh;
-}
-.automacao {
-  background: url(https://drive.google.com/uc?export=view&id=1tJsJR-PJbp-2-46cnji_0cD7X7in76-f);
-  filter: brightness(70.8%);
-}
-</style>
 <script>
 import ModalContato from "@/views/ModalContato";
 import Header from "@/components/Interface/Header";
@@ -65,3 +80,53 @@ export default {
   }
 };
 </script>
+<style scoped>
+.paragraph {
+  text-align: justify;
+  font-size: 1.5em;
+  margin: 3%;
+}
+.desce-jumbo {
+  margin-top: 45px;
+}
+
+.jumbotron {
+  height: 70vh;
+}
+.automacao {
+  background: url(https://drive.google.com/uc?export=view&id=1tJsJR-PJbp-2-46cnji_0cD7X7in76-f);
+  filter: brightness(50.8%);
+}
+
+.card-img-top {
+  height: 30vh !important;
+}
+
+.card-img-top.card-img-soluction {
+  height: 40vh !important;
+}
+
+.card.cards-container.cards-soluction {
+  max-width: 250px !important;
+  position: relative;
+  display: inline-block !important;
+  font-size: 14px;
+}
+
+.card:hover {
+  border: 1px solid black !important;
+  transform: scale(1) !important;
+  box-shadow: 0 5px rgba(0, 0, 0, 0.6) !important;
+}
+
+.card.cards-container {
+  background: whitesmoke;
+  border: 0.9px solid;
+  border-color: gray;
+  border-radius: 15px;
+  position: relative;
+  margin: 1%;
+  opacity: 0.9;
+  display: inline-flex !important;
+}
+</style>
