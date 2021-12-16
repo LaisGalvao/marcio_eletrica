@@ -1,12 +1,12 @@
 <template>
   <div>
-    <form class="form-contato">
+    <form class="form-contato" @submit="sendMail">
       <span>Nome:</span>
       <label for="">
-        <b-form-input type="text" v-model="form.name" />
+        <b-form-input type="text" name="name" v-model="form.name" />
       </label>
 
-      <span>Email:</span>
+   <!--    <span>Email:</span>
       <label for="">
         <b-form-input type="email" v-model="form.email" />
       </label>
@@ -36,7 +36,7 @@
         placeholder="Escolha um arquivo ou arraste aqui..."
         drop-placeholder="Solte um arquivo aqui..."
         >Anexar</b-form-file
-      >
+      > -->
       <b-button
         variant="outline-danger"
         class="btn-modal-contato"
@@ -46,20 +46,21 @@
       <b-button
         variant="outline-success"
         class="btn-modal-contato"
-        @click="sendMail"
+        type="submit"
         >Enviar</b-button
       >
     </form>
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
       selected: null,
       form: {
         name: "",
-        email: "",
+     /*    email: "",
         tel: "",
         msg: "",
         file: null,
@@ -68,19 +69,27 @@ export default {
           { value: "a", text: "This is First option" },
           { value: "b", text: "Selected Option" },
           { value: { C: "3PO" }, text: "This is an option with object value" },
-          { value: "d", text: "This one is disabled", disabled: true }
-        ]
-      }
+          { value: "d", text: "This one is disabled", disabled: true },
+        ], */
+      },
     };
   },
   methods: {
     sendMail() {
       localStorage.setItem("form", JSON.stringify(this.form));
+      axios.post("../../api/mail.php")
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch(function (response) {
+          //handle error
+          console.log(response);
+        });
     },
     hideModal() {
       this.$root.$emit("bv::hide::modal", "modal-1", "#btnShow");
-    }
-  }
+    },
+  },
 };
 </script>
 <style>
