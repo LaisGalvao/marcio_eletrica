@@ -32,7 +32,7 @@
 <style>
 .paragraph {
   text-align: justify;
-  font-size: 16px;
+  font-size: 1.6em;
   margin: 3%;
 }
 .desce-jumbo {
@@ -55,7 +55,7 @@ export default {
   components: {
     JumbotronBanner: JumbotronBanner,
     Header: Header,
-    ModalContato: ModalContato
-  }
+    ModalContato: ModalContato,
+  },
 };
 </script>

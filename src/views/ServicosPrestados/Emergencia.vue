@@ -14,7 +14,7 @@
         Atendemos emergências em caso de:
         <ul>
           <li>Anomalias da rede elétrica</li>
-          <li>Aueda total ou parcial de energia</li>
+          <li>Queda total ou parcial de energia</li>
           <li>Lâmpada piscando</li>
           <li>Tomadas apresentando mau funcionamento</li>
         </ul>
@@ -30,7 +30,7 @@
 <style scoped>
 .paragraph {
   text-align: justify;
-  font-size: 16px;
+  font-size: 1.6em;
   margin: 3%;
 }
 .desce-jumbo {
@@ -42,7 +42,7 @@
 
 .emergencia {
   background: url(https://drive.google.com/uc?export=view&id=1wr7Kmkx55bhSQ1aN2oK5OzZ1IHv1lm8q);
- filter: brightness(50.8%);
+  filter: brightness(50.8%);
 }
 </style>
 <script>
@@ -53,7 +53,7 @@ export default {
   components: {
     JumbotronBanner: JumbotronBanner,
     Header: Header,
-    ModalContato: ModalContato
-  }
+    ModalContato: ModalContato,
+  },
 };
 </script>

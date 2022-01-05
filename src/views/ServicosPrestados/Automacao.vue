@@ -76,14 +76,14 @@ export default {
   components: {
     JumbotronBanner: JumbotronBanner,
     Header: Header,
-    ModalContato: ModalContato
-  }
+    ModalContato: ModalContato,
+  },
 };
 </script>
 <style scoped>
 .paragraph {
   text-align: justify;
-  font-size: 1.5em;
+  font-size: 1.6em;
   margin: 3%;
 }
 .desce-jumbo {

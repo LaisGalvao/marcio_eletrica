@@ -6,7 +6,7 @@
         <b-form-input type="text" name="name" v-model="form.name" />
       </label>
 
-   <!--    <span>Email:</span>
+      <!--    <span>Email:</span>
       <label for="">
         <b-form-input type="email" v-model="form.email" />
       </label>
@@ -60,7 +60,7 @@ export default {
       selected: null,
       form: {
         name: "",
-     /*    email: "",
+        /*    email: "",
         tel: "",
         msg: "",
         file: null,
@@ -77,13 +77,14 @@ export default {
   methods: {
     sendMail() {
       localStorage.setItem("form", JSON.stringify(this.form));
-      axios.post("../../api/mail.php")
+      axios
+        .post("../../api/mail.php")
         .then((response) => {
           console.log(response.data);
         })
         .catch(function (response) {
           //handle error
-          console.log(response);
+          console.log(response.data);
         });
     },
     hideModal() {

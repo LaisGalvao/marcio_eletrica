@@ -21,9 +21,7 @@
       <b-icon icon="lightning" class="h2"></b-icon>
       <br />
       <hr />
-      <h3 id="paragraph-fadeIn">
-        Realizamos serviços em:
-      </h3>
+      <h3 id="paragraph-fadeIn">Realizamos serviços em:</h3>
       <div>
         <b-card
           title="Residências"
@@ -31,7 +29,7 @@
           img-alt="Image"
           img-top
           tag="article"
-          style="max-width: 20rem;"
+          style="max-width: 20rem"
           class="cards-container"
         >
           <b-card-text>
@@ -46,7 +44,7 @@
           img-alt="Image"
           img-top
           tag="article"
-          style="max-width: 20rem;"
+          style="max-width: 20rem"
           class="cards-container"
         >
           <b-card-text>
@@ -61,7 +59,7 @@
           img-alt="Image"
           img-top
           tag="article"
-          style="max-width: 20rem;"
+          style="max-width: 20rem"
           class="cards-container"
         >
           <b-card-text>
@@ -72,9 +70,7 @@
       </div>
       <br />
       <hr />
-      <h3 id="paragraph-fadeIn">
-        Também apresentamos soluções em:
-      </h3>
+      <h3 id="paragraph-fadeIn">Também apresentamos soluções em:</h3>
       <div>
         <b-card
           title="Serviços de automação"
@@ -169,34 +165,27 @@ export default {
     return {
       image_card_local: [
         {
-          src:
-            "https://drive.google.com/uc?export=view&id=1rl3RgWFu_VYUlNlj9Y2XYG3SCz0uDpt-"
+          src: "https://drive.google.com/uc?export=view&id=1rl3RgWFu_VYUlNlj9Y2XYG3SCz0uDpt-",
         },
         {
-          src:
-            "https://drive.google.com/uc?export=view&id=19mSrBevky7pAqtFF2bqCgfNhlQ5j3kHC"
+          src: "https://drive.google.com/uc?export=view&id=19mSrBevky7pAqtFF2bqCgfNhlQ5j3kHC",
         },
         {
-          src:
-            "https://drive.google.com/uc?export=view&id=1H9XSbGNxIUGKlxeAP8wXlRm5r8ttWPwu"
+          src: "https://drive.google.com/uc?export=view&id=1H9XSbGNxIUGKlxeAP8wXlRm5r8ttWPwu",
         },
         {
-          src:
-            "https://drive.google.com/uc?export=view&id=1tJsJR-PJbp-2-46cnji_0cD7X7in76-f"
+          src: "https://drive.google.com/uc?export=view&id=1tJsJR-PJbp-2-46cnji_0cD7X7in76-f",
         },
         {
-          src:
-            "https://drive.google.com/uc?export=view&id=1XBOw1kS7Vy-n4kLclZBhV8B9w3X_sIva"
+          src: "https://drive.google.com/uc?export=view&id=1XBOw1kS7Vy-n4kLclZBhV8B9w3X_sIva",
         },
         {
-          src:
-            "https://drive.google.com/uc?export=view&id=1TaVU1CNVAqP8jqN_a_szkd49GaCuAh5Q"
+          src: "https://drive.google.com/uc?export=view&id=1TaVU1CNVAqP8jqN_a_szkd49GaCuAh5Q",
         },
         {
-          src:
-            "https://drive.google.com/uc?export=view&id=1wr7Kmkx55bhSQ1aN2oK5OzZ1IHv1lm8q"
-        }
-      ]
+          src: "https://drive.google.com/uc?export=view&id=1wr7Kmkx55bhSQ1aN2oK5OzZ1IHv1lm8q",
+        },
+      ],
     };
   },
   components: { Header, Cards },
@@ -207,8 +196,8 @@ export default {
         document.getElementById("paragraph-fadeIn").getBoundingClientRect().y -
         80;
       window.scrollTo(0, p);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -251,7 +240,7 @@ export default {
 }
 
 .card-emergency {
-  width: 70% !important;
+  width: 50% !important;
 }
 
 @media screen and (max-width: 992px) {
