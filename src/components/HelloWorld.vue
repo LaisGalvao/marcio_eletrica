@@ -14,9 +14,9 @@
       </b-jumbotron>
     </div>
     <div class="container-fluid">
-      <h3 id="paragraph-fadeIn">
+      <h2 id="paragraph-fadeIn">
         Serviço de qualidade há mais de 25 anos no mercado.
-      </h3>
+      </h2>
       <b-icon icon="tools" class="h2"></b-icon>
       <b-icon icon="lightning" class="h2"></b-icon>
       <br />

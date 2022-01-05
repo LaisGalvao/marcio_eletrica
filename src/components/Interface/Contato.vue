@@ -6,7 +6,7 @@
         <b-form-input type="text" name="name" v-model="form.name" />
       </label>
 
-      <!--    <span>Email:</span>
+      <span>Email:</span>
       <label for="">
         <b-form-input type="email" v-model="form.email" />
       </label>
@@ -36,7 +36,7 @@
         placeholder="Escolha um arquivo ou arraste aqui..."
         drop-placeholder="Solte um arquivo aqui..."
         >Anexar</b-form-file
-      > -->
+      >
       <b-button
         variant="outline-danger"
         class="btn-modal-contato"
@@ -53,31 +53,31 @@
   </div>
 </template>
 <script>
-import axios from "axios";
+/* import axios from "axios"; */
 export default {
   data() {
     return {
       selected: null,
       form: {
         name: "",
-        /*    email: "",
+        email: "",
         tel: "",
         msg: "",
         file: null,
         options: [
-          { value: null, text: "Please select an option" },
-          { value: "a", text: "This is First option" },
-          { value: "b", text: "Selected Option" },
-          { value: { C: "3PO" }, text: "This is an option with object value" },
-          { value: "d", text: "This one is disabled", disabled: true },
-        ], */
+          { value: null, text: "Selecione uma opção" },
+          { value: "automacao", text: "Automação" },
+          { value: "emergencia", text: "Emergência" },
+          { value: "padrao_entrada", text: "Padrão de Entrada" },
+          { value: "projeto_eletrico", text: "Projetos Elétricos" },
+        ],
       },
     };
   },
   methods: {
     sendMail() {
       localStorage.setItem("form", JSON.stringify(this.form));
-      axios
+      /*   axios
         .post("../../api/mail.php")
         .then((response) => {
           console.log(response.data);
@@ -85,7 +85,7 @@ export default {
         .catch(function (response) {
           //handle error
           console.log(response.data);
-        });
+        }); */
     },
     hideModal() {
       this.$root.$emit("bv::hide::modal", "modal-1", "#btnShow");
