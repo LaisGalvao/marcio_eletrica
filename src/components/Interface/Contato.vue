@@ -53,7 +53,7 @@
   </div>
 </template>
 <script>
-/* import axios from "axios"; */
+import emailjs from "emailjs-com";
 export default {
   data() {
     return {
@@ -76,16 +76,18 @@ export default {
   },
   methods: {
     sendMail() {
-      localStorage.setItem("form", JSON.stringify(this.form));
-      /*   axios
-        .post("../../api/mail.php")
-        .then((response) => {
-          console.log(response.data);
-        })
-        .catch(function (response) {
-          //handle error
-          console.log(response.data);
-        }); */
+      // localStorage.setItem("form", JSON.stringify(this.form));
+      emailjs.send(
+        "service_kz97946",
+        "template_sqgyjg2",
+        this.form,
+        "user_1zmTo7op4jjuKsXYkSaHV"
+        /*   {
+          name: this.form.name,
+          email: this.form.email,
+          message: this.form.msg,
+        } */
+      );
     },
     hideModal() {
       this.$root.$emit("bv::hide::modal", "modal-1", "#btnShow");
