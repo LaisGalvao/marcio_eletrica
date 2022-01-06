@@ -1,14 +1,14 @@
 <template>
   <div>
-    <form class="form-contato" @submit="sendMail">
+    <form class="form-contato" ref="form" @submit.prevent="sendMail">
       <span>Nome:</span>
       <label for="">
-        <b-form-input type="text" name="name" v-model="form.name" />
+        <b-form-input type="text" name="user_name" v-model="form.name" />
       </label>
 
       <span>Email:</span>
       <label for="">
-        <b-form-input type="email" v-model="form.email" />
+        <b-form-input type="email" name="user_email" v-model="form.email" />
       </label>
 
       <span>Celular:</span>
@@ -23,6 +23,7 @@
       <label for="">
         <b-form-textarea
           id="textarea-default"
+          name="message"
           v-model="form.msg"
           placeholder="Sua mensagem"
         ></b-form-textarea>
@@ -57,13 +58,13 @@ import emailjs from "emailjs-com";
 export default {
   data() {
     return {
-      selected: null,
       form: {
         name: "",
         email: "",
         tel: "",
         msg: "",
         file: null,
+        selected: null,
         options: [
           { value: null, text: "Selecione uma opção" },
           { value: "automacao", text: "Automação" },
@@ -76,18 +77,23 @@ export default {
   },
   methods: {
     sendMail() {
-      // localStorage.setItem("form", JSON.stringify(this.form));
-      emailjs.send(
-        "service_kz97946",
-        "template_sqgyjg2",
-        this.form,
-        "user_1zmTo7op4jjuKsXYkSaHV"
-        /*   {
-          name: this.form.name,
-          email: this.form.email,
-          message: this.form.msg,
-        } */
-      );
+      var newForm = Object.assign(this.form, this.selected, {});
+      console.log(newForm);
+      emailjs
+        .sendForm(
+          "service_kz97946",
+          "template_sqgyjg2",
+          this.$refs.form,
+          "user_1zmTo7op4jjuKsXYkSaHV"
+        )
+        .then(
+          (result) => {
+            console.log("SUCCESS!", result.text);
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+          }
+        );
     },
     hideModal() {
       this.$root.$emit("bv::hide::modal", "modal-1", "#btnShow");
