@@ -10,23 +10,25 @@
       />
     </div>
     <div class="container">
-      <p class="paragraph">
-        Um projeto de padrão de entrada de energia tem como objetivo a concessão
-        de energia elétrica da concessionária para sua casa, de modo a garantir
-        a segurança e uma boa eficiência energética.
-      </p>
-      <p class="paragraph">
-        As informações técnicas para a montagem e instalação correta do padrão
-        de entrada da residência, serão disponibilizadas pelas concessionárias
-        responsáveis pela distribuição de energia elétrica da sua região, cidade
-        ou estado.
-      </p>
-      <p class="paragraph">
-        Elaboramos projetos e instalação com até 3 medidores de entrada, e
-        também executamos projetos já elaborados com mais de 3 medidores.
-      </p>
+      <div class="col-md-12">
+        <p class="paragraph">
+          Um projeto de padrão de entrada de energia tem como objetivo a
+          concessão de energia elétrica da concessionária para sua casa, de modo
+          a garantir a segurança e uma boa eficiência energética.
+        </p>
+        <p class="paragraph">
+          As informações técnicas para a montagem e instalação correta do padrão
+          de entrada da residência, serão disponibilizadas pelas concessionárias
+          responsáveis pela distribuição de energia elétrica da sua região,
+          cidade ou estado.
+        </p>
+        <p class="paragraph">
+          Elaboramos projetos e instalação com até 3 medidores de entrada, e
+          também executamos projetos já elaborados com mais de 3 medidores.
+        </p>
+      </div>
+      <div class="container"><ModalContato /></div>
     </div>
-    <ModalContato />
   </div>
 </template>
 <style>

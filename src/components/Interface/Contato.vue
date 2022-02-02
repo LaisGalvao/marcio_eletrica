@@ -76,19 +76,21 @@ export default {
     };
   },
   methods: {
-    sendMail() {
+    sendMail(e) {
       var newForm = Object.assign(this.form, this.selected, {});
       console.log(newForm);
       emailjs
         .sendForm(
-          "service_kz97946",
-          "template_sqgyjg2",
-          this.$refs.form,
-          "user_1zmTo7op4jjuKsXYkSaHV"
+          "service_galvaoeletrica",
+          "template_2dhvsup",
+        /*   this.$refs.form, */
+
+          "user_1zmTo7op4jjuKsXYkSaHV",
+         e.target
         )
         .then(
           (result) => {
-            console.log("SUCCESS!", result.text);
+            console.log("SUCCESS!", result.text, result.status, result.data);
           },
           (error) => {
             console.log("FAILED...", error.text);

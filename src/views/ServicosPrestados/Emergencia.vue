@@ -10,7 +10,8 @@
       />
     </div>
     <div class="container">
-      <p class="paragraph">
+      <div class="col-md-12">
+        <p class="paragraph">
         Atendemos emergências em caso de:
         <ul>
           <li>Anomalias da rede elétrica</li>
@@ -23,8 +24,11 @@
         Trabalhamos com execução de projetos elétricos já elaborados, entre em
         contato para saber mais.
       </p>
+        <div class="container"><ModalContato /></div>
+      </div>
+
     </div>
-    <ModalContato />
+
   </div>
 </template>
 <style scoped>

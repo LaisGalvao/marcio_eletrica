@@ -29,7 +29,7 @@
           img-alt="Image"
           img-top
           tag="article"
-          style="max-width: 20rem"
+          style="max-width: 16rem"
           class="cards-container"
         >
           <b-card-text>
@@ -39,32 +39,32 @@
         </b-card>
 
         <b-card
-          title="Comércios"
-          :img-src="image_card_local[1].src"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem"
-          class="cards-container"
-        >
-          <b-card-text>
-            Serviços feitos prezando a excelência visando melhoria na qualidade
-            e funcionalidade do seu comércio.
-          </b-card-text>
-        </b-card>
-
-        <b-card
           title="Prédios"
           :img-src="image_card_local[2].src"
           img-alt="Image"
           img-top
           tag="article"
-          style="max-width: 20rem"
+          style="max-width: 16rem"
           class="cards-container"
         >
           <b-card-text>
-            Agregando segurança a edifícios e prédios, visando o bem estar das
-            pessoas.
+            Projetos feitos pensando em agregar segurança a edifícios e prédios,
+            visando o bem estar das pessoas.
+          </b-card-text>
+        </b-card>
+
+        <b-card
+          title="Comércios"
+          :img-src="image_card_local[1].src"
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 16rem"
+          class="cards-container"
+        >
+          <b-card-text>
+            Serviços feitos prezando a excelência visando melhoria na qualidade
+            e funcionalidade do seu comércio.
           </b-card-text>
         </b-card>
       </div>
@@ -130,26 +130,34 @@
         </b-card>
       </div>
       <div class="container">
-        <div class="row justify-content-md-center">
-          <b-card
-            title="Atendimento de energência 24h"
-            :img-src="image_card_local[6].src"
-            img-alt="Image"
-            img-top
-            tag="article"
-            class="card-emergency card-img-emergency"
-          >
-            <b-card-text>
-              Atendimento de emergência 24 horas, perzando sua segurança e a
-              qualidade dos nossos serviços
-            </b-card-text>
-
-            <b-button
-              @click="$router.push('/servicos/emergencia')"
-              variant="warning"
-              >Saiba mais</b-button
-            >
-          </b-card>
+        <div class="row justify-content-md-center" style="margin-top: 8%; margin-bottom: 5%">
+          <div class="card mb-3" style="max-width: 540px">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img
+                  :src="image_card_local[6].src"
+                  class="card-emergency card-img-emergency"
+                  alt="Atendimento de energência 24h"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Atendimento de energência 24h</h5>
+                  <p class="card-text">
+                    Atendimento de emergência 24 horas, perzando sua segurança e
+                    a qualidade dos nossos serviços
+                  </p>
+                  <p class="card-text">
+                    <b-button
+                      @click="$router.push('/servicos/emergencia')"
+                      variant="warning"
+                      >Saiba mais</b-button
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -203,7 +211,7 @@ export default {
 
 <style>
 .card-img-top {
-  height: 50vh !important;
+  height: 30vh !important;
 }
 
 .card-img-top.card-img-soluction {
@@ -223,15 +231,17 @@ export default {
   box-shadow: 0 5px 15px #e1c46d !important;
 }
 .card:hover {
-  border: 1px solid black !important;
-  transform: scale(1) !important;
-  box-shadow: 0 5px rgba(0, 0, 0, 0.6) !important;
+  border: 1px solid slategray !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 5px slategrey !important;
+  transition: transform 500ms ease 0s, opacity 500ms ease 0s,
+    visibility 500ms ease 0s;
 }
 
 .card.cards-container {
   background: whitesmoke;
   border: 0.9px solid;
-  border-color: gray;
+  border-color: slategrey;
   border-radius: 15px;
   position: relative;
   margin: 1%;
@@ -240,7 +250,7 @@ export default {
 }
 
 .card-emergency {
-  width: 50% !important;
+  width: 100% !important;
 }
 
 @media screen and (max-width: 992px) {
@@ -249,7 +259,7 @@ export default {
   }
 }
 .card-emergency .card-img-top .card-img-emergency img {
-  height: 70vh !important;
+  height: 100% !important;
 }
 .jumbotron {
   background: url("https://drive.google.com/uc?export=view&id=1GC9LZ3Kz23W3lJRR-qv1UKPIZiMeLMBj")

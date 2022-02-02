@@ -10,18 +10,20 @@
       />
     </div>
     <div class="container">
-      <p class="paragraph">
-        Um projeto elétrico tem como objetivo viabilizar a segurança da
-        instalação, e oferece melhor eficiência energética. Também evita
-        desperdício de materiais, e transtornos decorrentes de uma execução não
-        adequada ou uma instalação fora das normas.
-      </p>
-      <p class="paragraph">
-        Trabalhamos com execução de projetos elétricos já elaborados, entre em
-        contato para saber mais.
-      </p>
+      <div class="col-md-12">
+        <p class="paragraph">
+          Um projeto elétrico tem como objetivo viabilizar a segurança da
+          instalação, e oferece melhor eficiência energética. Também evita
+          desperdício de materiais, e transtornos decorrentes de uma execução
+          não adequada ou uma instalação fora das normas.
+        </p>
+        <p class="paragraph">
+          Trabalhamos com execução de projetos elétricos já elaborados, entre em
+          contato para saber mais.
+        </p>
+      </div>
+      <div class="cotainer"><ModalContato /></div>
     </div>
-    <ModalContato />
   </div>
 </template>
 <style>
