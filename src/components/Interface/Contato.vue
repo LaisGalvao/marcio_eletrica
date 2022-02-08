@@ -1,60 +1,88 @@
 <template>
-  <div>
+  <div class="text-center">
     <form class="form-contato" ref="form" @submit.prevent="sendMail">
-      <span>Nome:</span>
-      <label for="">
-        <b-form-input type="text" name="user_name" v-model="form.name" />
-      </label>
+      <b-row>
+        <b-col cols="6"
+          ><span>Nome:</span>
+          <b-form-input type="text" name="user_name" v-model="form.name" />
+        </b-col>
 
-      <span>Email:</span>
-      <label for="">
-        <b-form-input type="email" name="user_email" v-model="form.email" />
-      </label>
+        <b-col cols="6">
+          <span>Email:</span>
+          <b-form-input type="email" name="user_email" v-model="form.email" />
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col cols="6">
+          <span>Celular:</span>
+          <b-form-input type="tel" v-model="form.tel" />
+        </b-col>
 
-      <span>Celular:</span>
-      <label for="">
-        <b-form-input type="tel" v-model="form.tel" />
-      </label>
+        <b-col cols="6"
+          ><span>Selecione um serviço:</span>
+          <b-form-select
+            v-model="selected"
+            :options="form.options"
+          ></b-form-select>
+        </b-col>
+        <br />
+      </b-row>
+      <hr />
+      <b-row>
+        <br />
+        <b-col cols="12">
+          <span>Descreva seu problema:</span>
 
-      <span>Selecione um serviço:</span>
-      <b-form-select v-model="selected" :options="form.options"></b-form-select>
+          <b-form-textarea
+            id="textarea-default"
+            name="message"
+            v-model="form.msg"
+            placeholder="Sua mensagem"
+          ></b-form-textarea>
+          <br />
+        </b-col>
 
-      <span>Descreva seu problema:</span>
-      <label for="">
-        <b-form-textarea
-          id="textarea-default"
-          name="message"
-          v-model="form.msg"
-          placeholder="Sua mensagem"
-        ></b-form-textarea>
-      </label>
-
-      <span>Anexos</span>
-      <b-form-file
-        class="mt-3"
-        plain
-        v-model="form.file"
-        placeholder="Escolha um arquivo ou arraste aqui..."
-        drop-placeholder="Solte um arquivo aqui..."
-        >Anexar</b-form-file
-      >
-      <b-button
-        variant="outline-danger"
-        class="btn-modal-contato"
-        @click="hideModal"
-        >Cancelar</b-button
-      >
-      <b-button
-        variant="outline-success"
-        class="btn-modal-contato"
-        type="submit"
-        >Enviar</b-button
-      >
+        <b-col cols="12">
+          <br />
+          <span>Anexos</span>
+          <b-form-file
+            class="mt-3"
+            plain
+            v-model="form.file"
+            placeholder="Escolha um arquivo ou arraste aqui..."
+            drop-placeholder="Solte um arquivo aqui..."
+            >Anexar</b-form-file
+          >
+        </b-col>
+      </b-row>
+      <hr />
+      <br /><br />
+      <b-row>
+        <b-col>
+          <b-button
+            variant="outline-danger"
+            class="btn-modal-contato"
+            @click="hideModal"
+            >Cancelar</b-button
+          ></b-col
+        >
+        <b-col>
+          <b-button
+            variant="outline-success"
+            class="btn-modal-contato"
+            type="submit"
+            >Enviar</b-button
+          >
+        </b-col>
+      </b-row>
     </form>
   </div>
 </template>
 <script>
-import emailjs from "emailjs-com";
+/* import emailjs from "emailjs-com"; */
+import axios from "axios";
+const querystring = require("querystring");
+
 export default {
   data() {
     return {
@@ -77,13 +105,16 @@ export default {
   },
   methods: {
     sendMail(e) {
-      var newForm = Object.assign(this.form, this.selected, {});
-      console.log(newForm);
-      emailjs
+      /* var newForm = Object.assign(this.form, this.selected, {}); */
+      /*   console.log(newForm); */
+   /*    axios
+        .post("../../services/mail.php", querystring.stringify(this.form))
+        .then((res) => console.log(res.data, e)); */
+      /*   emailjs
         .sendForm(
           "service_galvaoeletrica",
           "template_2dhvsup",
-        /*   this.$refs.form, */
+          this.$refs.form,
 
           "user_1zmTo7op4jjuKsXYkSaHV",
          e.target
@@ -95,7 +126,8 @@ export default {
           (error) => {
             console.log("FAILED...", error.text);
           }
-        );
+        ); */
+        e
     },
     hideModal() {
       this.$root.$emit("bv::hide::modal", "modal-1", "#btnShow");
@@ -109,7 +141,7 @@ export default {
 }
 
 .btn-modal-contato {
-  width: 80% !important;
+  width: 50% !important;
   display: inline-block !important;
   margin-top: 5%;
   margin-left: 9%;
