@@ -7,7 +7,7 @@
 
 Este foi meu primeiro site feito fora do meu ambiente de estudos. Você pode acessar o site no link a seguir:
 
-http://galvaoeletricaresidencial.ga/
+https://galvaoeletrica.netlify.app/
 
 ## Build Setup
 
