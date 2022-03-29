@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <form class="form-contato" ref="form" @submit.prevent="sendMail">
+    <form class="form-contato" ref="form" @submit="sendMail">
       <b-row>
         <b-col cols="6"
           ><span>Nome:</span>
@@ -20,10 +20,7 @@
 
         <b-col cols="6"
           ><span>Selecione um serviço:</span>
-          <b-form-select
-            v-model="selected"
-            :options="form.options"
-          ></b-form-select>
+          <b-form-select :options="form.options"></b-form-select>
         </b-col>
         <br />
       </b-row>
@@ -60,6 +57,7 @@
       <b-row>
         <b-col>
           <b-button
+            id="btnShow"
             variant="outline-danger"
             class="btn-modal-contato"
             @click="hideModal"
@@ -76,12 +74,19 @@
         </b-col>
       </b-row>
     </form>
+    <b-button
+      variant="outline-success"
+      class="btn-modal-contato"
+      type="submit"
+      @click="send"
+      >Whats</b-button
+    >
   </div>
 </template>
 <script>
 /* import emailjs from "emailjs-com"; */
-import axios from "axios";
-const querystring = require("querystring");
+/* import axios from "axios"; */
+/* const querystring = require("querystring"); */
 
 export default {
   data() {
@@ -98,16 +103,17 @@ export default {
           { value: "automacao", text: "Automação" },
           { value: "emergencia", text: "Emergência" },
           { value: "padrao_entrada", text: "Padrão de Entrada" },
-          { value: "projeto_eletrico", text: "Projetos Elétricos" },
-        ],
+          { value: "projeto_eletrico", text: "Projetos Elétricos" }
+        ]
       },
+      obj: null
     };
   },
   methods: {
     sendMail(e) {
       /* var newForm = Object.assign(this.form, this.selected, {}); */
       /*   console.log(newForm); */
-   /*    axios
+      /*    axios
         .post("../../services/mail.php", querystring.stringify(this.form))
         .then((res) => console.log(res.data, e)); */
       /*   emailjs
@@ -127,12 +133,24 @@ export default {
             console.log("FAILED...", error.text);
           }
         ); */
-        e
+      localStorage.setItem("form", this.form);
+      e;
+    },
+    send() {
+     /*  this.obj = {
+        nome: this.form.name,
+        email: this.form.email,
+        celular: this.form.tel,
+        mensagem: this.form.msg
+      }; */
+      window.open(
+        `https://api.whatsapp.com/send?phone=5511973183283&text=Olá, meu nome é ${this.form.name} isso é um teste ${this.form.msg}`
+      );
     },
     hideModal() {
       this.$root.$emit("bv::hide::modal", "modal-1", "#btnShow");
-    },
-  },
+    }
+  }
 };
 </script>
 <style>
