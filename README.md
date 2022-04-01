@@ -1,11 +1,7 @@
 # Márcio Elétrica
 
 ![](https://img.shields.io/badge/status-em%20desenvolvimento-success)
-<<<<<<< HEAD
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c0c16989-1a63-48f3-b488-93919f863e40/deploy-status)](https://app.netlify.com/sites/galvaoeletrica/deploys)
-=======
 ![Netlify Status](https://api.netlify.com/api/v1/badges/c0c16989-1a63-48f3-b488-93919f863e40/deploy-status)
->>>>>>> d5fd476ce1d04e598ce2dd8e6997f48dd352491f
 
 > Um website voltado para divulgação de serviços de um eletricista residencial. // A website aimed at disclosure of a residential electrician services.
 
@@ -15,7 +11,7 @@ https://galvaoeletrica.netlify.app/
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
