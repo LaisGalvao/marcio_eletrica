@@ -6,21 +6,26 @@ export default {
         title: "Residências",
         imageSrc:
           "https://drive.google.com/uc?export=view&id=1rl3RgWFu_VYUlNlj9Y2XYG3SCz0uDpt-",
+        imageTitle: "residencia",
         desc: `Instalações elétricas de baixa tensão,
         seguindo a norma NBR 5410 da ABNT, garantindo sua segurança`
       },
       {
         title: "Prédios",
-        imageSrc:  "https://drive.google.com/uc?export=view&id=19mSrBevky7pAqtFF2bqCgfNhlQ5j3kHC",
+        imageSrc:
+          "https://drive.google.com/uc?export=view&id=19mSrBevky7pAqtFF2bqCgfNhlQ5j3kHC",
+        imageTitle: "predio",
         desc: `Projetos feitos pensando em agregar segurança a
         edifícios e prédios, visando o bem estar das pessoas. `
       },
       {
         title: "Comércios",
-        imageSrc: "https://drive.google.com/uc?export=view&id=1H9XSbGNxIUGKlxeAP8wXlRm5r8ttWPwu",
+        imageSrc:
+          "https://drive.google.com/uc?export=view&id=1H9XSbGNxIUGKlxeAP8wXlRm5r8ttWPwu",
+        imageTitle: "comercio",
         desc: `Serviços feitos prezando a excelência visando
         melhoria na qualidade e funcionalidade do seu comércio. `
-      },
+      }
     ],
     cardsServicos: [
       {

@@ -1,154 +1,161 @@
 <template>
-  <div class="fadeIn">
-    <Header />
-    <div>
-      <div class="desce-jumbo">
-        <b-jumbotron
-          class="has-text-dark fade-in"
-          text-variant="dark"
-          header="Galvão Elétrica"
-          lead="Eletricista Residencial, Predial e Industrial"
-          id="banner-fadeIn"
-        >
-          <b-button type="is-danger" to="/" @click="scrollIntoPage"
-            >Mais informações</b-button
+  <div id="conteudo">
+    <div class="fadeIn">
+      <Header />
+      <div>
+        <div class="desce-jumbo">
+          <b-jumbotron
+            class="has-text-dark fade-in"
+            text-variant="dark"
+            header="Galvão Elétrica"
+            lead="Eletricista Residencial, Predial e Industrial"
+            id="banner-fadeIn"
           >
-        </b-jumbotron>
-      </div>
-
-      <div id="paragraph-fadeIn" class="container-fluid">
-        <h2 class="is-size-1">
-          Serviço de qualidade há mais de 25 anos no mercado.
-        </h2>
-        <b-icon icon="tools" class="h2"></b-icon>
-        <b-icon icon="lightning" class="h2"></b-icon>
-
-        <h1 class="is-size-2">Realizamos serviços em:</h1>
-        <br /><br />
-        <div class="columns is-full is-multiline">
-          <div
-            class="column is-half"
-            v-for="card in getCardLocais"
-            :key="card.title"
-          >
-            <Cards
-              :image="card.imageSrc"
-              :title="card.title"
-              :desc="card.desc"
-            />
-          </div>
+            <b-button type="is-danger" to="/" @click="scrollIntoPage"
+              >Mais informações</b-button
+            >
+          </b-jumbotron>
         </div>
 
-        <br />
-        <hr />
-        <h3 class="is-size-3">
-          Também apresentamos soluções em:
-        </h3>
-        <div>
-          <b-card
-            title="Serviços de automação"
-            :img-src="image_card_local[0].src"
-            img-alt="Image"
-            img-top
-            tag="article"
-            class="cards-container cards-soluction card-img-soluction"
-          >
-            <b-card-text>
-              Reduza custos, garanta a segurança, e traga melhor qualidade na
-              sua produção através da automação
-            </b-card-text>
-            <b-button
-              @click="$router.push('/servicos/automacao')"
-              type="is-warning"
-              >Saiba mais</b-button
-            >
-          </b-card>
+        <div id="paragraph-fadeIn" class="container-fluid">
+          <h2 class="is-size-1">
+            Serviço de qualidade há mais de 25 anos no mercado.
+          </h2>
+          <b-icon icon="tools" class="h2"></b-icon>
+          <b-icon icon="lightning" class="h2"></b-icon>
 
-          <b-card
-            title="Execução de projetos elétricos"
-            :img-src="image_card_local[1].src"
-            img-alt="Image"
-            img-top
-            tag="article"
-            class="cards-container cards-soluction card-img-soluction"
-          >
-            <b-card-text>
-              Um projeto elétrico bem articulado influencia positivamente em
-              todas as etapas de uma instalação elétrica
-            </b-card-text>
-            <b-button
-              @click="$router.push('/servicos/projetos-eletricos')"
-              type="is-warning"
-              >Saiba mais</b-button
-            >
-          </b-card>
-
-          <b-card
-            title="Projetos para padrão de entrada de energia"
-            :img-src="image_card_local[2].src"
-            img-alt="Image"
-            img-top
-            tag="article"
-            class="cards-container cards-soluction card-img-soluction"
-          >
-            <b-card-text>
-              Instalação do padrão de entrada, de acordo com as concessionárias
-              responsáveis pela distribuição de energia elétrica da sua região
-            </b-card-text>
-            <b-button
-              @click="$router.push('/servicos/padrao-entrada')"
-              type="is-warning"
-              >Saiba mais</b-button
-            >
-          </b-card>
-        </div>
-        <div class="container">
+          <h1 class="is-size-2">Realizamos serviços em:</h1>
           <br /><br />
-          <h1 class="is-size-4">
-            Precisando de ajuda em um momento de aperto? Veja sobre nosso
-            serviço de emergência:
-          </h1>
-          <div
-            class="row justify-content-md-center"
-            style="margin-top: 5%; margin-bottom: 5%"
-          >
-            <div class="card mb-3" style="max-width: 540px">
-              <div class="row no-gutters">
-                <div class="col-md-4">
-                  <img
-                    :src="image_card_local[3].src"
-                    class="card-emergency card-img-emergency"
-                    alt="Atendimento de energência 24h"
-                  />
-                </div>
-                <div class="column is-full">
-                  <div class="card-body">
-                    <h5 class="card-title">Atendimento de energência 24h</h5>
-                    <p class="card-text">
-                      Atendimento de emergência 24 horas, perzando sua segurança
-                      e a qualidade dos nossos serviços
-                    </p>
-                    <p class="card-text">
-                      <b-button
-                        @click="$router.push('/servicos/emergencia')"
-                        type="is-warning"
-                        >Saiba mais</b-button
-                      >
-                    </p>
+          <section>
+            <div
+              class="hero is-medium"
+              v-for="card in getCardLocais"
+              :key="card.title"
+            >
+              <Cards
+                :image="card.imageSrc"
+                :title="card.title"
+                :desc="card.desc"
+                :imageTitle="card.imageTitle"
+              />
+            </div>
+          </section>
+
+          <br />
+          <hr />
+          <h3 class="is-size-3">
+            Também apresentamos soluções em:
+          </h3>
+          <div>
+            <b-card
+              title="Serviços de automação"
+              :img-src="image_card_local[0].src"
+              img-alt="Image"
+              img-top
+              tag="article"
+              class="cards-container cards-soluction card-img-soluction"
+            >
+              <b-card-text>
+                Reduza custos, garanta a segurança, e traga melhor qualidade na
+                sua produção através da automação
+              </b-card-text>
+              <b-button
+                @click="$router.push('/servicos/automacao')"
+                type="is-warning"
+                >Saiba mais</b-button
+              >
+            </b-card>
+
+            <b-card
+              title="Execução de projetos elétricos"
+              :img-src="image_card_local[1].src"
+              img-alt="Image"
+              img-top
+              tag="article"
+              class="cards-container cards-soluction card-img-soluction"
+            >
+              <b-card-text>
+                Um projeto elétrico bem articulado influencia positivamente em
+                todas as etapas de uma instalação elétrica
+              </b-card-text>
+              <b-button
+                @click="$router.push('/servicos/projetos-eletricos')"
+                type="is-warning"
+                >Saiba mais</b-button
+              >
+            </b-card>
+
+            <b-card
+              title="Projetos para padrão de entrada de energia"
+              :img-src="image_card_local[2].src"
+              img-alt="Image"
+              img-top
+              tag="article"
+              class="cards-container cards-soluction card-img-soluction"
+            >
+              <b-card-text>
+                Instalação do padrão de entrada, de acordo com as
+                concessionárias responsáveis pela distribuição de energia
+                elétrica da sua região
+              </b-card-text>
+              <b-button
+                @click="$router.push('/servicos/padrao-entrada')"
+                type="is-warning"
+                >Saiba mais</b-button
+              >
+            </b-card>
+          </div>
+          <div class="container">
+            <br /><br />
+            <h1 class="is-size-4">
+              Precisando de ajuda em um momento de aperto? Veja sobre nosso
+              serviço de emergência:
+            </h1>
+            <div
+              class="row justify-content-md-center"
+              style="margin-top: 5%; margin-bottom: 5%"
+            >
+              <div class="card mb-3" style="max-width: 540px">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <img
+                      :src="image_card_local[3].src"
+                      class="card-emergency card-img-emergency"
+                      alt="Atendimento de energência 24h"
+                    />
+                  </div>
+                  <div class="column is-full">
+                    <div class="card-body">
+                      <h5 class="card-title">Atendimento de energência 24h</h5>
+                      <p class="card-text">
+                        Atendimento de emergência 24 horas, perzando sua
+                        segurança e a qualidade dos nossos serviços
+                      </p>
+                      <p class="card-text">
+                        <b-button
+                          @click="$router.push('/servicos/emergencia')"
+                          type="is-warning"
+                          >Saiba mais</b-button
+                        >
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div>  <Footer />
     </div>
+
+
   </div>
 </template>
 
 <script>
 import Cards from "@/components/Interface/Cards";
 import Header from "@/components/Interface/Header";
+import Footer from "./Interface/Footer.vue";
 export default {
   name: "HelloWorld",
   data() {
@@ -173,7 +180,7 @@ export default {
       ]
     };
   },
-  components: { Header, Cards },
+  components: { Header, Cards, Footer },
   computed: {
     getCardLocais() {
       return this.$store.getters.cardsLocais;
@@ -296,4 +303,9 @@ export default {
 .show {
   opacity: 1;
 }
+
+#conteudo{
+  min-height: 100%;
+}
+
 </style>
