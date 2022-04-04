@@ -11,7 +11,7 @@ https://galvaoeletrica.netlify.app/
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
