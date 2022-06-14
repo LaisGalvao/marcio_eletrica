@@ -1,9 +1,9 @@
 <template>
   <div class="fadeIn">
-    <section :class="'hero-body hero-bgimg-' + imageTitle">
-      <!--  <figure class="image is-128x128">
+   <!--  <section :class="'hero-body hero-bgimg-' + imageTitle">
+       <figure class="image is-128x128">
           <img class="is-rounded" :src="image" :alt="alt" />
-        </figure> -->
+        </figure>
       <section class="hero is-light is-large hero-opacity">
         <h1 class="hero-opacity title">
           {{ title }}
@@ -13,7 +13,20 @@
           {{ desc }}
         </p>
       </section>
-    </section>
+    </section> -->
+    <b-card
+    :title="title"
+    :img-src="image"
+    :img-alt="alt"
+    img-top
+    tag="article"
+    style="max-width: 20rem;"
+    class="image-card "
+  >
+    <b-card-text>
+     {{desc}}
+    </b-card-text>
+  </b-card>
   </div>
 
   <!--  <b-card

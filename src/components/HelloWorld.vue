@@ -1,143 +1,100 @@
 <template>
-  <div id="conteudo">
-    <div class="fadeIn">
-      <Header />
-      <div>
-        <div class="desce-jumbo">
-          <b-jumbotron
-            class="has-text-dark fade-in"
-            text-variant="dark"
-            header="Galvão Elétrica"
-            lead="Eletricista Residencial, Predial e Industrial"
-            id="banner-fadeIn"
-          >
-            <b-button type="is-danger" to="/" @click="scrollIntoPage"
-              >Mais informações</b-button
-            >
-          </b-jumbotron>
-        </div>
+  <div class="flex-wrapper is-fullheight-100vh">
+    <div id="conteudo">
+      <div class="fadeIn">
+        <Header />
+        <div>
+          <div class="desce-jumbo" id="banner-fadeIn">
+            <div class="jumbotron jumbotron-fluid has-text-dark fade-in">
+              <h1 class="display-3 has-text-dark fade-in">
+                <span>
+                  <img src='https://drive.google.com/uc?export=view&id=11ObbAD5AgCyJmL9oOvMxWI7uvleKo4vx' width="95">
+                </span>
+                Galvão Elétrica
 
-        <div id="paragraph-fadeIn" class="container-fluid">
-          <h2 class="is-size-1">
-            Serviço de qualidade há mais de 25 anos no mercado.
-          </h2>
-          <b-icon icon="tools" class="h2"></b-icon>
-          <b-icon icon="lightning" class="h2"></b-icon>
+              </h1>
 
-          <h1 class="is-size-2">Realizamos serviços em:</h1>
-          <br /><br />
-          <section>
-            <div
-              class="hero is-medium"
-              v-for="card in getCardLocais"
-              :key="card.title"
-            >
-              <Cards
-                :image="card.imageSrc"
-                :title="card.title"
-                :desc="card.desc"
-                :imageTitle="card.imageTitle"
-              />
+              <p class="lead">Eletricista Residencial, Predial e Industrial</p>
+              <p class="display-4">
+                <b-button type="is-warning" to="/" @click="scrollIntoPage">Mais informações</b-button>
+              </p>
             </div>
-          </section>
-
-          <br />
-          <hr />
-          <h3 class="is-size-3">
-            Também apresentamos soluções em:
-          </h3>
-          <div>
-            <b-card
-              title="Serviços de automação"
-              :img-src="image_card_local[0].src"
-              img-alt="Image"
-              img-top
-              tag="article"
-              class="cards-container cards-soluction card-img-soluction"
-            >
-              <b-card-text>
-                Reduza custos, garanta a segurança, e traga melhor qualidade na
-                sua produção através da automação
-              </b-card-text>
-              <b-button
-                @click="$router.push('/servicos/automacao')"
-                type="is-warning"
-                >Saiba mais</b-button
-              >
-            </b-card>
-
-            <b-card
-              title="Execução de projetos elétricos"
-              :img-src="image_card_local[1].src"
-              img-alt="Image"
-              img-top
-              tag="article"
-              class="cards-container cards-soluction card-img-soluction"
-            >
-              <b-card-text>
-                Um projeto elétrico bem articulado influencia positivamente em
-                todas as etapas de uma instalação elétrica
-              </b-card-text>
-              <b-button
-                @click="$router.push('/servicos/projetos-eletricos')"
-                type="is-warning"
-                >Saiba mais</b-button
-              >
-            </b-card>
-
-            <b-card
-              title="Projetos para padrão de entrada de energia"
-              :img-src="image_card_local[2].src"
-              img-alt="Image"
-              img-top
-              tag="article"
-              class="cards-container cards-soluction card-img-soluction"
-            >
-              <b-card-text>
-                Instalação do padrão de entrada, de acordo com as
-                concessionárias responsáveis pela distribuição de energia
-                elétrica da sua região
-              </b-card-text>
-              <b-button
-                @click="$router.push('/servicos/padrao-entrada')"
-                type="is-warning"
-                >Saiba mais</b-button
-              >
-            </b-card>
           </div>
-          <div class="container">
+
+          <div id="paragraph-fadeIn" class="container-fluid">
+            <h2 class="is-size-1">
+              Serviço de qualidade há mais de 25 anos no mercado.
+            </h2>
+            <b-icon icon="tools" class="h2"></b-icon>
+            <b-icon icon="lightning" class="h2"></b-icon>
+
+            <h1 class="is-size-2">Realizamos serviços em:</h1>
             <br /><br />
-            <h1 class="is-size-4">
-              Precisando de ajuda em um momento de aperto? Veja sobre nosso
-              serviço de emergência:
-            </h1>
-            <div
-              class="row justify-content-md-center"
-              style="margin-top: 5%; margin-bottom: 5%"
-            >
-              <div class="card mb-3" style="max-width: 540px">
-                <div class="row no-gutters">
-                  <div class="col-md-4">
-                    <img
-                      :src="image_card_local[3].src"
-                      class="card-emergency card-img-emergency"
-                      alt="Atendimento de energência 24h"
-                    />
-                  </div>
-                  <div class="column is-full">
-                    <div class="card-body">
-                      <h5 class="card-title">Atendimento de energência 24h</h5>
-                      <p class="card-text">
-                        Atendimento de emergência 24 horas, perzando sua
-                        segurança e a qualidade dos nossos serviços
-                      </p>
-                      <p class="card-text">
-                        <b-button
-                          @click="$router.push('/servicos/emergencia')"
-                          type="is-warning"
-                          >Saiba mais</b-button
-                        >
-                      </p>
+            <div class="columns is-vcentered is-desktop is-full-mobile">
+              <div class="column" v-for="card in getCardLocais" :key="card.title">
+                <Cards :image="card.imageSrc" :title="card.title" :desc="card.desc" :imageTitle="card.imageTitle" />
+              </div>
+            </div>
+
+            <br />
+            <hr />
+            <h3 class="is-size-3">
+              Também apresentamos soluções em:
+            </h3>
+            <div>
+              <b-card title="Serviços de automação" :img-src="image_card_local[0].src" img-alt="Image" img-top
+                tag="article" class="cards-container cards-soluction card-img-soluction">
+                <b-card-text>
+                  Reduza custos, garanta a segurança, e traga melhor qualidade na
+                  sua produção através da automação
+                </b-card-text>
+                <b-button @click="$router.push('/servicos/automacao')" type="is-warning">Saiba mais</b-button>
+              </b-card>
+
+              <b-card title="Execução de projetos elétricos" :img-src="image_card_local[1].src" img-alt="Image" img-top
+                tag="article" class="cards-container cards-soluction card-img-soluction">
+                <b-card-text>
+                  Um projeto elétrico bem articulado influencia positivamente em
+                  todas as etapas de uma instalação elétrica
+                </b-card-text>
+                <b-button @click="$router.push('/servicos/projetos-eletricos')" type="is-warning">Saiba mais</b-button>
+              </b-card>
+
+              <b-card title="Projetos para padrão de entrada de energia" :img-src="image_card_local[2].src"
+                img-alt="Image" img-top tag="article" class="cards-container cards-soluction card-img-soluction">
+                <b-card-text>
+                  Instalação do padrão de entrada, de acordo com as
+                  concessionárias responsáveis pela distribuição de energia
+                  elétrica da sua região
+                </b-card-text>
+                <b-button @click="$router.push('/servicos/padrao-entrada')" type="is-warning">Saiba mais</b-button>
+              </b-card>
+            </div>
+            <div class="container">
+              <br /><br />
+              <h1 class="is-size-4">
+                Precisando de ajuda em um momento de aperto? Veja sobre nosso
+                serviço de emergência:
+              </h1>
+              <div class="row justify-content-md-center" style="margin-top: 5%; margin-bottom: 5%">
+                <div class="card mb-3" style="max-width: 540px">
+                  <div class="row no-gutters">
+                    <div class="col-md-4">
+                      <img :src="image_card_local[3].src" class="card-emergency card-img-emergency"
+                        alt="Atendimento de energência 24h" />
+                    </div>
+                    <div class="column is-full">
+                      <div class="card-body">
+                        <h5 class="card-title">Atendimento de energência 24h</h5>
+                        <p class="card-text">
+                          Atendimento de emergência 24 horas, perzando sua
+                          segurança e a qualidade dos nossos serviços
+                        </p>
+                        <p class="card-text">
+                          <b-button @click="$router.push('/servicos/emergencia')" type="is-warning">Saiba mais
+                          </b-button>
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -145,10 +102,10 @@
             </div>
           </div>
         </div>
-      </div>  <Footer />
+      </div>
+
     </div>
-
-
+<Footer />
   </div>
 </template>
 
@@ -198,6 +155,17 @@ export default {
 </script>
 
 <style>
+.is-fullheight-100vh{
+  height: 100vh;
+}
+
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .card-img-top {
   height: 30vh !important;
 }
@@ -218,6 +186,7 @@ export default {
   transform: scale(1) !important;
   box-shadow: 0 5px 15px #e1c46d !important;
 }
+
 .card:hover {
   /*  border: 1px solid slategray !important; */
   transform: scale(1.1) !important;
@@ -246,15 +215,17 @@ export default {
     width: 100% !important;
   }
 }
+
 .card-emergency .card-img-top .card-img-emergency img {
   width: 100% !important;
   height: 100% !important;
 }
+
 .jumbotron {
-  background: url("https://drive.google.com/uc?export=view&id=1GC9LZ3Kz23W3lJRR-qv1UKPIZiMeLMBj")
+  background: url("https://drive.google.com/uc?export=view&id=1DQgaCQatE1Ka3YMZcjW2ZWfQOPkkL7xv"),
     no-repeat fixed center;
   background-size: cover;
-  height: 70vh;
+  height: 90vh;
   filter: brightness(95.8%);
 }
 
@@ -278,13 +249,16 @@ export default {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
+
 .desce-jumbo {
   margin-top: 45px;
 }
+
 .jumbotron-header {
   filter: opacity(0.9);
   background-color: #000;
@@ -300,12 +274,12 @@ export default {
 .hide {
   opacity: 0;
 }
+
 .show {
   opacity: 1;
 }
 
-#conteudo{
+#conteudo {
   min-height: 100%;
 }
-
 </style>
