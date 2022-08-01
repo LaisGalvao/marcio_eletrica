@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center">
+  <div class="text-center" style="padding: 5%">
     <!--   <form class="form-contato" ref="form" @submit="sendMail">
       <b-row>
         <b-col cols="6"
@@ -76,104 +76,68 @@
     </form> -->
 
     <form @submit.prevent="sendMail">
-      <label>Name</label>
-      <input type="text" v-model="name" name="name" placeholder="Your Name" />
+      <h1>Preencha o formulário e entraremos em contato:</h1>
+      <label>Nome</label>
+      <input type="text" v-model="name" name="name" placeholder="Seu nome:" />
       <label>Email</label>
       <input
         type="email"
         v-model="email"
         name="email"
-        placeholder="Your Email"
+        placeholder="Seu email:"
       />
-      <label>Message</label>
+      <label>Mensagem</label>
       <textarea
         name="message"
         v-model="message"
         cols="30"
         rows="5"
-        placeholder="Message"
+        placeholder="Deixe sua mensagem:"
       >
       </textarea>
 
-      <input type="submit" value="Send" />
+      <input type="submit" value="Enviar" />
     </form>
-
-    <b-button
-      variant="outline-success"
-      class="btn-modal-contato"
-      type="submit"
-      @click="send"
-      >Whats</b-button
-    >
   </div>
 </template>
 <script>
-import emailjs from "emailjs-com";
-
+import api from "../../services";
 export default {
   data() {
     return {
-      /*   form: {
-        name: "",
-        email: "",
-        tel: "",
-        msg: "",
-        file: null,
-        selected: null,
-        options: [
-          { value: null, text: "Selecione uma opção" },
-          { value: "automacao", text: "Automação" },
-          { value: "emergencia", text: "Emergência" },
-          { value: "padrao_entrada", text: "Padrão de Entrada" },
-          { value: "projeto_eletrico", text: "Projetos Elétricos" }
-        ]
-      }, */
       obj: null,
       name: "",
       email: "",
-      message: ""
+      message: "",
     };
   },
   methods: {
-    sendMail(e) {
-      try {
-        emailjs.sendForm(
-          "service_galvaoeletrica",
-          "template_2dhvsup",
-          e.target,
-          "user_1zmTo7op4jjuKsXYkSaHV",
-
-          {
-            name: this.name,
-            email: this.email,
-            message: this.msg
+    sendMail() {
+      api
+        .post("/sendMail", {
+          name: this.name,
+          email: this.email,
+          message: this.msg,
+        })
+        .then(
+          (response) => {
+            if (response.status === 200) {
+              console.log(response.data);
+            }
           },
-          alert("deu certo")
+          (error) => {
+            return Promise.reject(error);
+          }
         );
-      } catch (error) {
-        alert("bugou");
-        console.log(error);
-      }
-
       this.name = "";
       this.email = "";
       this.msg = "";
     },
-    send() {
-      /*  this.obj = {
-        nome: this.form.name,
-        email: this.form.email,
-        celular: this.form.tel,
-        mensagem: this.form.msg
-      }; */
-      window.open(
-        `https://api.whatsapp.com/send?phone=5511973183283&text=Olá, meu nome é ${this.form.name} isso é um teste ${this.form.msg}`
-      );
-    },
+
     hideModal() {
       this.$root.$emit("bv::hide::modal", "modal-1", "#btnShow");
-    }
-  }
+    },
+  },
 };
 </script>
 <style>

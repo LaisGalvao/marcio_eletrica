@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <div class="desce-jumbo">
       <JumbotronBanner
         title="Projetos para padrão de entrada de energia"
@@ -38,7 +37,7 @@
   margin: 3%;
 }
 .desce-jumbo {
-  margin-top: 45px;
+  padding-top: 45px;
 }
 .jumbotron {
   height: 70vh;
@@ -51,12 +50,10 @@
 </style>
 <script>
 import ModalContato from "@/views/ModalContato";
-import Header from "@/components/Interface/Header";
 import JumbotronBanner from "@/components/Interface/JumbotronBanner";
 export default {
   components: {
     JumbotronBanner: JumbotronBanner,
-    Header: Header,
     ModalContato: ModalContato,
   },
 };

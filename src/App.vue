@@ -1,12 +1,17 @@
 <template>
   <div id="app">
+    <Header />
     <router-view />
+    <Footer />
   </div>
 </template>
 
 <script>
+import Footer from "./components/Interface/Footer.vue";
+import Header from "./components/Interface/Header.vue";
 export default {
-  name: "App"
+  name: "App",
+  components: { Footer, Header },
 };
 </script>
 
@@ -21,6 +26,6 @@ export default {
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
 }
 </style>

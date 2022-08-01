@@ -34,7 +34,7 @@
 
             <h1 class="is-size-2">Realizamos serviços em:</h1>
             <br /><br />
-            <div class="ml-6">
+            <div :class=" wind <= 1024 ? 'ml-3' : 'ml-6'">
               <div class="columns is-vcentered is-desktop is-full-mobile">
                 <div
                   class="column"
@@ -156,7 +156,6 @@
             </div>
           </div>
         </div>
-        <!--  <Footer /> -->
       </div>
     </div>
   </div>
@@ -164,8 +163,6 @@
 
 <script>
 import Cards from "@/components/Interface/Cards";
-import Header from "@/components/Interface/Header";
-import Footer from "./Interface/Footer.vue";
 export default {
   name: "HelloWorld",
   data() {
@@ -184,9 +181,10 @@ export default {
           src: "https://drive.google.com/uc?export=view&id=1wr7Kmkx55bhSQ1aN2oK5OzZ1IHv1lm8q",
         },
       ],
+      wind: window.innerWidth
     };
   },
-  components: { Header, Cards, Footer },
+  components: { Cards },
   computed: {
     getCardLocais() {
       return this.$store.getters.cardsLocais;
@@ -309,7 +307,7 @@ export default {
 }
 
 .desce-jumbo {
-  margin-top: 45px;
+  padding-top: 45px;
 }
 
 .jumbotron-header {

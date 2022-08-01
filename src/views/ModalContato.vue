@@ -3,7 +3,7 @@
     <b-button
       v-b-modal.modal-1
       variant="warning"
-      class="btn-contato"
+      class="btn-contato is-warning"
       id="toggle-btn"
       @click="modalShow = !modalShow"
       >Preencha o formulário, responderemos sua solicitação o mais rápido
@@ -46,6 +46,6 @@ export default {
 <style scoped>
 .btn-contato {
   margin: 2%;
-  width: 30%;
+  width: auto;
 }
 </style>

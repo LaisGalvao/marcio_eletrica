@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <div class="desce-jumbo">
       <JumbotronBanner
         title="Execução de projetos elétricos"
@@ -10,7 +9,7 @@
       />
     </div>
     <div class="container">
-      <div class="col-md-12">
+      <!-- <div class="col-md-12"> -->
         <p class="paragraph">
           Um projeto elétrico tem como objetivo viabilizar a segurança da
           instalação, e oferece melhor eficiência energética. Também evita
@@ -21,7 +20,7 @@
           Trabalhamos com execução de projetos elétricos já elaborados, entre em
           contato para saber mais.
         </p>
-      </div>
+      <!-- </div> -->
       <div class="cotainer"><ModalContato /></div>
     </div>
   </div>
@@ -33,7 +32,7 @@
   margin: 3%;
 }
 .desce-jumbo {
-  margin-top: 45px;
+  pading-top: 45px;
 }
 
 .jumbotron {
@@ -48,12 +47,10 @@
 </style>
 <script>
 import ModalContato from "@/views/ModalContato";
-import Header from "@/components/Interface/Header";
 import JumbotronBanner from "@/components/Interface/JumbotronBanner";
 export default {
   components: {
     JumbotronBanner: JumbotronBanner,
-    Header: Header,
     ModalContato: ModalContato,
   },
 };
