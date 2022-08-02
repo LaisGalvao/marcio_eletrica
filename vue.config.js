@@ -1,3 +1,7 @@
+const path = require("path");
+const { PuppeteerRenderer } = require("prerender-spa-plugin");
+const PrerenderSPAPlugin = require("prerender-spa-plugin");
+
 module.exports = {
   chainWebpack: config => {
     config.module
@@ -20,5 +24,25 @@ module.exports = {
 
         return options
       })
-  }
+  },
+  plugins: [
+    new PrerenderSPAPlugin({
+      // Absolute path to compiled SPA
+      staticDir: path.join(__dirname, 'dist'),
+      // List of routes to prerender
+      routes: ['/', '/servicos/padrao-entrada', '/servicos/projetos-eletricos', '/servicos/automacao', '/servicos/emergencia'],
+      minify: {
+        minifyCSS: true,
+        minifyJS: true,
+        removeComments: true
+      },
+      //é preciso declarar uma nova instância do Pupeeter sem o plugin
+      renderer: new PuppeteerRenderer({
+        maxConcurrentRoutes: 4,
+        renderAfterElementExists: "#app"
+        // o mesmo elemento #app onde o vue monta a aplicação
+      })
+    }
+    )
+  ]
 }
