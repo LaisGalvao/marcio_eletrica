@@ -37,7 +37,7 @@ export default {};
 @media screen and (max-width: 1024px) {
   .footer {
     bottom: 0 !important;
-    top: 600vh !important;
+    top: 120vh !important;
     position: relative;
     clear: both;
     width: 100% !important;

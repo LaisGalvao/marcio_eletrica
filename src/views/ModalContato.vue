@@ -1,13 +1,13 @@
 <template>
   <div>
-    <b-button
+    <button
       v-b-modal.modal-1
       variant="warning"
       class="btn-contato is-warning"
       id="toggle-btn"
       @click="modalShow = !modalShow"
       >Preencha o formulário, responderemos sua solicitação o mais rápido
-      possíve!</b-button
+      possíve!</button
     >
 
     <b-modal
@@ -47,5 +47,22 @@ export default {
 .btn-contato {
   margin: 2%;
   width: auto;
+  height: max-content;
+  padding: 2%;
+  overflow: hidden;
+  background-color: hsl(48, 100%, 67%);
+  border: none;
+  border-radius: 10px;
+}
+ .btn-contato span{
+    width: auto;
+    overflow: hidden;
+  }
+
+@media screen and (max-width: 1024px){
+  .btn-contato{
+    width: 80% !important;
+    margin: 2%;
+  }
 }
 </style>
