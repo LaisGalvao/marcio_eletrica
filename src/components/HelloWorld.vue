@@ -198,6 +198,12 @@ export default {
       window.scrollTo(0, p);
     },
   },
+    metaInfo: {
+      // if no subcomponents specify a metaInfo.title, this title will be used
+      title: 'Home',
+      // all titles will be injected into this template
+      titleTemplate: '%s | Márcio Elétrica'
+    }
 };
 </script>
 

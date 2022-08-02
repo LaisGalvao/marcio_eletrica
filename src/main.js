@@ -11,6 +11,10 @@ import "buefy/dist/buefy.css";
 
 Vue.use(Buefy);
 
+import VueMeta from 'vue-meta'
+
+Vue.use(VueMeta)
+
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */

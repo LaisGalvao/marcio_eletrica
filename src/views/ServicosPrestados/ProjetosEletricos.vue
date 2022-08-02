@@ -53,5 +53,11 @@ export default {
     JumbotronBanner: JumbotronBanner,
     ModalContato: ModalContato,
   },
+   metaInfo: {
+      // if no subcomponents specify a metaInfo.title, this title will be used
+      title: 'Projetos Elétricos',
+      // all titles will be injected into this template
+      titleTemplate: '%s | Márcio Elétrica'
+    }
 };
 </script>
