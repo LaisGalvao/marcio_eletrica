@@ -2,9 +2,19 @@
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        O site <strong>Galvão Elétrica</strong> foi desenvolvido por
+        <a
+          style="color: black"
+          target="_blank"
+          href="https://github.com/LaisGalvao"
+          >Laís Galvão</a
+        >. Siga a página no
+        <a
+          style="color: black"
+          target="_blank"
+          href="https://www.facebook.com/El%C3%A9trica-Predial-Residencial-Galv%C3%A3o-241037206588537/"
+          >Facebook</a
+        >.
       </p>
     </div>
   </footer>
@@ -15,11 +25,11 @@ export default {};
 </script>
 
 <style>
- @media screen and (min-width: 1025px) {
+@media screen and (min-width: 1025px) {
   .footer {
     position: relative !important;
     bottom: 0 !important;
-    top: 370vh !important;
+    top: 200vh !important;
     width: 100% !important;
   }
 }
