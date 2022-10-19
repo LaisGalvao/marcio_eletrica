@@ -14,7 +14,7 @@ cd dist/
 git checkout main
 git add .
 now=`date`
-git commit -m "deploy on 'now'"
+git commit -m "deploy on '$(date)'"
 
 # if you are deploying to https://<USERNAME>.github.io
 git push -f origin main
