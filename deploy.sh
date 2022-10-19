@@ -13,7 +13,7 @@ cd dist/
 # echo 'www.example.com' > CNAME
 git checkout main
 git add .
-git commit -m `'deploy' date +%d/%m/%Y" - "%H:%M:%S`
+git commit -m `'deploy on' date `
 
 # if you are deploying to https://<USERNAME>.github.io
 git push -f origin main
