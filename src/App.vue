@@ -23,7 +23,7 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-
+/* testeee */
 html,
 body {
   min-height: 100vh !important;
