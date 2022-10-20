@@ -8,7 +8,7 @@
           target="_blank"
           href="https://github.com/LaisGalvao"
           >Laís Galvão</a
-        >. Siga a página no
+        >. Siga a página da Galvão Elétrica no
         <a
           style="color: black"
           target="_blank"
@@ -29,7 +29,7 @@ export default {};
   .footer {
     position: relative !important;
     bottom: 0 !important;
-    top: 200vh !important;
+    top: 320vh !important;
     width: 100% !important;
   }
 }
@@ -37,7 +37,7 @@ export default {};
 @media screen and (max-width: 1024px) {
   .footer {
     bottom: 0 !important;
-    top: 120vh !important;
+    top: 270rem !important;
     position: relative;
     clear: both;
     width: 100% !important;

@@ -48,16 +48,66 @@
 <script>
 import ModalContato from "@/views/ModalContato";
 import JumbotronBanner from "@/components/Interface/JumbotronBanner";
+import scrollToTop from '../../mixins/scrollToTop';
 export default {
   components: {
     JumbotronBanner: JumbotronBanner,
     ModalContato: ModalContato,
   },
    metaInfo: {
+    htmlAttrs: {
+      lang: "pt-BR"
+    },
       // if no subcomponents specify a metaInfo.title, this title will be used
       title: 'Projetos Elétricos',
       // all titles will be injected into this template
-      titleTemplate: '%s | Márcio Elétrica'
-    }
+      titleTemplate: '%s | Márcio Elétrica',
+      meta: [
+      {
+        name: "twitter:card",
+        content: "summary"
+      },
+      {
+        name: "twitter:title",
+        content: "Projetos Elétricos | Márcio Elétrica"
+      },
+      {
+        name: "description",
+        content: "Um projeto elétrico tem como objetivo viabilizar a segurança da instalação, e oferece melhor eficiência energética. Também evita desperdício de materiais, e transtornos decorrentes de uma execução não adequada ou uma instalação fora das normas."
+      },
+      { property: "og:type", content: "article" },
+      {
+        property: "og:title",
+        content: "Projetos Elétricos | Márcio Elétrica"
+      },
+      {
+        property: "og:url",
+        content:
+          "https://galvaoeletrica.netlify.app/servicos/projetos-eletricos"
+      },
+      {
+        name: "og:description",
+        content: "Um projeto elétrico tem como objetivo viabilizar a segurança da instalação, e oferece melhor eficiência energética. Também evita desperdício de materiais, e transtornos decorrentes de uma execução não adequada ou uma instalação fora das normas."
+      },
+      {
+        property: "og:image",
+        content: "https://drive.google.com/uc?export=view&id=1XBOw1kS7Vy-n4kLclZBhV8B9w3X_sIva"
+      },
+      { property: "og:image:width", content: "200" },
+      { property: "og:image:height", content: "200" },
+      {
+        name: "twitter:image:src",
+        content: "https://drive.google.com/uc?export=view&id=1XBOw1kS7Vy-n4kLclZBhV8B9w3X_sIva"
+      },
+      {
+        name: "twitter:description",
+
+        name: "description",
+        content: "Um projeto elétrico tem como objetivo viabilizar a segurança da instalação, e oferece melhor eficiência energética. Também evita desperdício de materiais, e transtornos decorrentes de uma execução não adequada ou uma instalação fora das normas."
+      },
+      { property: "og:site_name", content: "Projetos Elétricos | Márcio Elétrica" }
+    ]
+    },
+    mixins: [scrollToTop]
 };
 </script>

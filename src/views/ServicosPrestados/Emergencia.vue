@@ -51,6 +51,7 @@
 <script>
 import ModalContato from "@/views/ModalContato";
 import JumbotronBanner from "@/components/Interface/JumbotronBanner";
+import scrollToTop from '../../mixins/scrollToTop';
 export default {
   components: {
     JumbotronBanner: JumbotronBanner,
@@ -61,6 +62,7 @@ export default {
       title: 'Serviços de Emergência',
       // all titles will be injected into this template
       titleTemplate: '%s | Márcio Elétrica'
-    }
+    },
+    mixins: [scrollToTop]
 };
 </script>

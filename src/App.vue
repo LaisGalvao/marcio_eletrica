@@ -9,9 +9,11 @@
 <script>
 import Footer from "./components/Interface/Footer.vue";
 import Header from "./components/Interface/Header.vue";
+import scrollToTop from './mixins/scrollToTop';
 export default {
   name: "App",
   components: { Footer, Header },
+  mixins: [scrollToTop]
 };
 </script>
 
@@ -27,5 +29,6 @@ export default {
 html,
 body {
   min-height: 100vh !important;
+  scroll-behavior: smooth;
 }
 </style>
