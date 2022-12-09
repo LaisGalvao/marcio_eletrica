@@ -31,9 +31,9 @@
   font-size: 1.6em;
   margin: 3%;
 }
-.desce-jumbo {
+/* .desce-jumbo {
   pading-top: 45px;
-}
+} */
 
 .jumbotron {
   height: 70vh;

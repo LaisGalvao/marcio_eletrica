@@ -6,7 +6,10 @@
         <div>
           <div class="desce-jumbo" id="banner-fadeIn">
             <div class="jumbotron jumbotron-fluid has-text-dark fade-in">
-              <h1 class="display-3 has-text-dark fade-in">
+              <h1
+                class="display-3 has-text-dark fade-in"
+                style="position: relative; top: 20%"
+              >
                 <span>
                   <img
                     src="https://drive.google.com/uc?export=view&id=11ObbAD5AgCyJmL9oOvMxWI7uvleKo4vx"
@@ -16,8 +19,8 @@
                 Galvão Elétrica
               </h1>
 
-              <p class="lead">Eletricista Residencial, Predial e Industrial</p>
-              <p class="display-4">
+              <p style="position: relative; top: 20%" class="lead">Eletricista Residencial, Predial e Industrial</p>
+              <p style="position: relative; top: 25%" class="display-4">
                 <b-button type="is-warning" to="/" @click="scrollIntoPage"
                   >Mais informações</b-button
                 >
@@ -34,7 +37,7 @@
 
             <h1 class="is-size-2">Realizamos serviços em:</h1>
             <br /><br />
-            <div :class=" wind <= 1024 ? 'ml-3' : 'ml-6'">
+            <div :class="wind <= 1024 ? 'ml-3' : 'ml-6'">
               <div class="columns is-vcentered is-desktop is-full-mobile">
                 <div
                   class="column"
@@ -181,7 +184,7 @@ export default {
           src: "https://drive.google.com/uc?export=view&id=1wr7Kmkx55bhSQ1aN2oK5OzZ1IHv1lm8q",
         },
       ],
-      wind: window.innerWidth
+      wind: window.innerWidth,
     };
   },
   components: { Cards },
@@ -198,12 +201,12 @@ export default {
       window.scrollTo(0, p);
     },
   },
-    metaInfo: {
-      // if no subcomponents specify a metaInfo.title, this title will be used
-      title: 'Home',
-      // all titles will be injected into this template
-      titleTemplate: '%s | Márcio Elétrica'
-    }
+  metaInfo: {
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    title: "Home",
+    // all titles will be injected into this template
+    titleTemplate: "%s | Márcio Elétrica",
+  },
 };
 </script>
 
@@ -271,6 +274,10 @@ export default {
   .card-emergency {
     width: 100% !important;
   }
+
+  .jumbotron {
+    height: 150vh !important;
+  }
 }
 
 .card-emergency .card-img-top .card-img-emergency img {
@@ -282,8 +289,8 @@ export default {
   background: url("https://drive.google.com/uc?export=view&id=1DQgaCQatE1Ka3YMZcjW2ZWfQOPkkL7xv"),
     no-repeat fixed center;
   background-size: cover;
-  height: 60vh;
-  filter: brightness(95.8%);
+  height: 75vh;
+  /* filter: brightness(75.8%); */
 }
 
 #banner-fadeIn {
@@ -311,10 +318,10 @@ export default {
     opacity: 1;
   }
 }
-
+/*
 .desce-jumbo {
   padding-top: 45px;
-}
+} */
 
 .jumbotron-header {
   filter: opacity(0.9);
