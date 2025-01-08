@@ -1,5 +1,5 @@
 <template>
-  <section class="services">
+  <section class="services service-list">
     <h2>Nossos Serviços</h2>
     <ul>
       <li v-for="service in services" :key="service.id">
@@ -32,11 +32,11 @@ export default {
 </script>
 
 <style scoped>
-.services {
+/* .services {
   padding: 40px 20px;
   background-color: #f4f4f4;
 }
-
+ */
 h2 {
   text-align: center;
   margin-bottom: 30px;
