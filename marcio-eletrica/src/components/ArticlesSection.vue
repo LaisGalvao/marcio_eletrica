@@ -3,10 +3,10 @@
     <h2>Artigos Recentes</h2>
     <div class="article-list">
       <div class="article-card" v-for="article in articles" :key="article.id">
-        <img :src="article.image" :alt="article.title" class="article-image" />
+        <!-- <img :src="article.image" :alt="article.title" class="article-image" /> -->
         <div class="article-content">
           <h3>{{ article.title }}</h3>
-          <p>{{ article.summary }}</p>
+          <p>{{ article.content }}</p>
           <router-link :to="{ name: 'ArticleDetail', params: { id: article.id } }" class="read-more">
             Ler mais
           </router-link>
@@ -18,31 +18,16 @@
 </template>
 
 <script>
+import getAllArticles from '@/services/api';
 export default {
   name: 'ArticlesSection',
   data() {
     return {
-      articles: [
-        {
-          id: 1,
-          title: 'Como escolher o melhor tipo de fiação para sua casa',
-          summary: 'Dicas práticas para garantir a segurança elétrica em sua residência.',
-          image: 'https://via.placeholder.com/300x200',
-        },
-        {
-          id: 2,
-          title: 'Manutenção preventiva: Evite surpresas com sua instalação elétrica',
-          summary: 'Saiba como fazer manutenções regulares para evitar gastos com reparos inesperados.',
-          image: 'https://via.placeholder.com/300x200',
-        },
-        {
-          id: 3,
-          title: 'Por que a instalação elétrica adequada é importante para sua segurança?',
-          summary: 'Entenda os riscos de uma instalação elétrica mal-feita e como evitá-los.',
-          image: 'https://via.placeholder.com/300x200',
-        }
-      ]
-    };
+      articles: [],
+    }
+  },
+ mounted() {
+    getAllArticles().then(data => this.articles = data)
   }
 }
 </script>
