@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import getAllArticles from '@/services/api';
+import { getAllArticles } from '@/services/api';
 export default {
   name: 'ArticlesSection',
   data() {
@@ -26,7 +26,7 @@ export default {
       articles: [],
     }
   },
- mounted() {
+  mounted() {
     getAllArticles().then(data => this.articles = data)
   }
 }

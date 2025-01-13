@@ -1,18 +1,27 @@
 <template>
     <div class="article-detail">
-      <!-- Botão de Voltar Fixo no topo -->
-      <a href="/" class="back-button">Voltar</a>
-  
-      <h1 class="heading-primary">{{ article.title }}</h1>
-      <img :src="article.image" :alt="article.title" class="image-large">
-      <p class="text-body">{{ article.summary }}</p>
-      <div v-html="article.content" class="text-body"></div>
+        <!-- Botão de Voltar -->
+        <a href="/" class="back-button">Voltar</a>
+
+        <!-- Título do Artigo -->
+        <h1 class="heading-primary">{{ article.title }}</h1>
+
+        <!-- Imagem do Artigo -->
+        <img :src="article.image_url" :alt="`Imagem do artigo ${article.title}`" class="image-large" />
+
+        <!-- Resumo do Artigo -->
+        <!-- <p class="text-body summary">{{ article.summary }}</p> -->
+
+        <!-- Conteúdo do Artigo -->
+        <div v-html="article.content" class="content"></div>
     </div>
-  </template>
+</template>
+
 <script>
+import { getArticleById } from '@/services/api';
 export default {
-    name: 'ArticleDetail',
-    props: ['id'], // Recebe o parâmetro da rota como prop
+    name: "ArticleDetail",
+    props: ["id"],
     data() {
         return {
             article: null,
@@ -21,140 +30,95 @@ export default {
     watch: {
         id: {
             immediate: true,
-            handler() {
-                this.fetchArticle(); // Atualiza o artigo sempre que o ID muda
-            },
+
         },
     },
-    methods: {
-        fetchArticle() {
-            // Substitua esta lógica pela chamada de API real
-            const mockArticles = [
-                {
-                    id: 1,
-                    title: 'Como escolher o melhor tipo de fiação para sua casa',
-                    content:
-                        'Dicas detalhadas sobre como escolher a fiação ideal para garantir segurança e eficiência.',
-                    image: 'https://via.placeholder.com/600x400',
-                },
-                {
-                    id: 2,
-                    title: 'Manutenção preventiva: Evite surpresas com sua instalação elétrica',
-                    content:
-                        'A manutenção preventiva é essencial para evitar problemas graves e garantir o funcionamento adequado do sistema elétrico.',
-                    image: 'https://via.placeholder.com/600x400',
-                },
-                {
-                    id: 3,
-                    title:
-                        'Por que a instalação elétrica adequada é importante para sua segurança?',
-                    content:
-                        'Instalações elétricas bem planejadas e executadas são fundamentais para evitar acidentes e desperdícios de energia.',
-                    image: 'https://via.placeholder.com/600x400',
-                },
-            ];
-
-            // Busca o artigo correspondente
-            this.article = mockArticles.find(
-                (article) => article.id === parseInt(this.id)
-            );
-
-            if (!this.article) {
-                console.warn('Artigo não encontrado.');
-            }
-        },
-    },
+    mounted() {        
+        getArticleById(this.$route.params.id).then(data => {
+            this.article = data
+            console.log(this.article);
+            
+        })
+    }
 };
 </script>
-
 <style scoped>
 /* ==================== */
-/* Estilos para o Componente ArticleDetail */
+/* Estilos Gerais */
 /* ==================== */
-
 .article-detail {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: var(--spacing-large);
-    background-color: var(--color-surface);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    font-family: var(--font-primary);
+    padding: 2rem 1rem;
+    padding-top: 5rem;
+    /* Espaço extra no topo para evitar sobreposição */
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .article-detail h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-medium);
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .article-detail p {
     font-size: 1rem;
     line-height: 1.75;
-    color: var(--color-text);
-    margin-bottom: var(--spacing-medium);
+    color: #555;
+    margin-bottom: 1.5rem;
+    text-align: justify;
 }
 
-.article-detail img {
+/* ==================== */
+/* Imagem do Artigo */
+.image-large {
     width: 100%;
+    max-width: 700px;
     height: auto;
-    border-radius: var(--border-radius);
-    margin-bottom: var(--spacing-large);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    /* Espaço inferior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    /* Garante que a imagem seja exibida corretamente */
 }
 
 /* ==================== */
-/* Section de Títulos e Subtítulos */
-.article-detail .subheading {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-top: var(--spacing-large);
-    margin-bottom: var(--spacing-medium);
-    color: var(--color-primary);
-}
-
-.article-detail .content {
-    font-size: 1rem;
-    line-height: 1.75;
-    color: var(--color-text);
-}
-
-.article-detail .content img {
-    max-width: 100%;
-    margin-top: var(--spacing-medium);
-    margin-bottom: var(--spacing-medium);
-}
-
-/* ==================== */
-/* Botão de Voltar Fixo */
-.article-detail .back-button {
+/* Botão de Voltar */
+.back-button {
     position: fixed;
     top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: var(--spacing-small) var(--spacing-medium);
-    background-color: var(--color-primary);
-    color: black;
+    left: 20px;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
     text-decoration: none;
-    border-radius: var(--border-radius);
+    border-radius: 5px;
     font-size: 1rem;
     transition: background-color 0.3s ease;
     z-index: 1000;
-    /* Garante que o botão fique sempre por cima do conteúdo */
+    /* Garante que o botão fique acima do conteúdo */
 }
 
-.article-detail .back-button:hover {
-    background-color: darken(var(--color-primary), 10%);
+.back-button:hover {
+    background-color: #0056b3;
 }
 
 /* ==================== */
 /* Estilos Responsivos */
+/* ==================== */
 @media (max-width: 768px) {
     .article-detail {
-        padding: var(--spacing-medium);
+        padding: 1.5rem;
+        padding-top: 5rem;
+        /* Mantém o espaço no topo em telas menores */
     }
 
     .article-detail h1 {
@@ -165,13 +129,18 @@ export default {
         font-size: 0.9rem;
     }
 
-    .article-detail .back-button {
+    .back-button {
         font-size: 0.9rem;
-        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
+    .article-detail {
+        padding: 1rem;
+        padding-top: 5rem;
+        /* Mantém o espaçamento em dispositivos pequenos */
+    }
+
     .article-detail h1 {
         font-size: 1.75rem;
     }
@@ -180,8 +149,9 @@ export default {
         font-size: 0.85rem;
     }
 
-    .article-detail .subheading {
-        font-size: 1rem;
+    .back-button {
+        padding: 0.5rem;
+        font-size: 0.85rem;
     }
 }
 </style>
