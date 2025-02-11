@@ -69,9 +69,10 @@ export default {
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 2rem;
   color: #333;
+  font-weight: bold;
 }
 
 .services-grid {
@@ -99,10 +100,15 @@ export default {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.05);
 }
 
 .service-title {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: #333;
   margin-bottom: 0.5rem;
 }

@@ -172,6 +172,7 @@ h1, h2, h3 {
   justify-content: center;
   max-width: 600px;
   margin: 0 auto;
+  justify-items: center;
 }
 
 .contact input, .contact textarea {
@@ -193,7 +194,8 @@ h1, h2, h3 {
 }
 
 .contact button:hover {
-  background-color: darken(var(--color-primary), 10%);
+  background-color: rgb(255, 123, 94);
+  color: var(--color-surface);
 }
 
 /* Services Section */

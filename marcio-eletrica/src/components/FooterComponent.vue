@@ -3,14 +3,19 @@
     <div class="footer-content">
       <p class="text-body">&copy; 2025 Eletricista Profissional. Todos os direitos reservados.</p>
       <div class="social-links">
-        <a href="https://www.facebook.com" target="_blank" class="social-link">Facebook</a>
-        <a href="https://www.instagram.com" target="_blank" class="social-link">Instagram</a>
-        <a href="https://wa.me/55XXXXXXX" target="_blank" class="social-link">WhatsApp</a>
+        <a href="https://www.facebook.com" target="_blank" class="social-link">
+          <i class="fab fa-facebook-f"></i> Facebook
+        </a>
+        <a href="https://www.instagram.com" target="_blank" class="social-link">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="https://wa.me/55XXXXXXX" target="_blank" class="social-link">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
       </div>
     </div>
   </footer>
 </template>
-
 <script>
 export default {
   name: 'Footer'
@@ -33,6 +38,12 @@ export default {
   margin: 0 10px;
   color: white;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.social-link i {
+  margin-right: 5px;
 }
 
 .social-link:hover {

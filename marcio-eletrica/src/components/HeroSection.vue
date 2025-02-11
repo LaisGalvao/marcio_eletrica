@@ -31,11 +31,25 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  color: black;
+  padding: 0 20px;
 }
 
 .hero-content {
-  text-align: center;
-  color: white;
+  max-width: 800px;
+}
+
+.heading-primary {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  animation: fadeInDown 1s ease-out;
+}
+
+.text-body {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out;
 }
 
 .cta-buttons {
@@ -47,19 +61,63 @@ export default {
   font-size: 16px;
   cursor: pointer;
   margin: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .btn-whatsapp {
   background-color: #25d366;
   color: white;
   border: none;
-  border-radius: 5px;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebd5a;
 }
 
 .btn-chatbot {
   background-color: #ff9f00;
   color: white;
   border: none;
-  border-radius: 5px;
+}
+
+.btn-chatbot:hover {
+  background-color: #e68a00;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .heading-primary {
+    font-size: 2rem;
+  }
+
+  .text-body {
+    font-size: 1rem;
+  }
+
+  .btn-whatsapp, .btn-chatbot {
+    font-size: 14px;
+  }
 }
 </style>

@@ -41,4 +41,10 @@ export default {
 
 <style>
 /* Adicione o estilo global aqui */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
 </style>

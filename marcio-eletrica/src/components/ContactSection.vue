@@ -44,11 +44,17 @@ export default {
 .contact {
   padding: 40px 20px;
   background-color: #fff;
+  max-width: 600px;
+  margin: 2rem auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 2rem;
+  color: #333;
 }
 
 .form-group {
@@ -58,13 +64,16 @@ h2 {
 label {
   display: block;
   margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
 }
 
 input, textarea {
-  width: 90vw;
+  width: 100%;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ddd;
+  font-size: 1rem;
 }
 
 textarea {
@@ -78,5 +87,29 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e68a00;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  input, textarea {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+  }
 }
 </style>

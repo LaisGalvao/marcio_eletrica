@@ -7,7 +7,7 @@
         <h1 class="heading-primary">{{ article.title }}</h1>
 
         <!-- Imagem do Artigo -->
-        <img :src="article.image_url" :alt="`Imagem do artigo ${article.title}`" class="image-large" />
+        <img :src="article.image" :alt="`Imagem do artigo ${article.title}`" class="image-large" />
 
         <!-- Resumo do Artigo -->
         <!-- <p class="text-body summary">{{ article.summary }}</p> -->
@@ -24,21 +24,24 @@ export default {
     props: ["id"],
     data() {
         return {
-            article: null,
+            article: {},
         };
     },
     watch: {
         id: {
             immediate: true,
-
-        },
+            handler(newId) {
+                this.fetchArticle(newId);
+            }
+        }
+    },
+    methods: {
+        async fetchArticle(id) {
+            this.article = await getArticleById(id);
+        }
     },
     mounted() {        
-        getArticleById(this.$route.params.id).then(data => {
-            this.article = data
-            console.log(this.article);
-            
-        })
+        this.fetchArticle(this.id);
     }
 };
 </script>
