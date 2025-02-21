@@ -7,7 +7,7 @@
         <h1 class="heading-primary">{{ article.title }}</h1>
 
         <!-- Imagem do Artigo -->
-        <img :src="article.image" :alt="`Imagem do artigo ${article.title}`" class="image-large" />
+        <img :src="article.image_url" :alt="`Imagem do artigo ${article.title}`" class="image-large" />
 
         <!-- Resumo do Artigo -->
         <!-- <p class="text-body summary">{{ article.summary }}</p> -->

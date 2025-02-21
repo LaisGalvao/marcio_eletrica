@@ -1,20 +1,50 @@
 <template>
   <section class="services-section">
     <div class="container">
-      <h2 class="section-title">Nossos Serviços</h2>
+      <h2 class="section-title">Também apresentamos soluções em:</h2>
       <div class="services-grid">
-        <!-- Renderização dinâmica dos serviços -->
-        <div v-for="service in services" :key="service.id" class="service-card">
-          <img :src="service.image" :alt="service.title" class="service-image" />
-          <h3 class="service-title">{{ service.title }}</h3>
-          <p class="service-description">{{ service.description }}</p>
+        <!-- Cards Existentes -->
+        <div class="service-card">
+          <img src="https://placehold.co/10" alt="Imagem" class="service-image" />
+          <h3 class="service-title">Serviços de automação</h3>
+          <p class="service-description">Reduza custos, garanta a segurança, e traga melhor qualidade na sua produção através da automação</p>
+          <button class="cta-button">Saiba mais</button>
+        </div>
+        <div class="service-card">
+          <img src="https://placehold.co/10" alt="Imagem" class="service-image" />
+          <h3 class="service-title">Execução de projetos elétricos</h3>
+          <p class="service-description">Um projeto elétrico bem articulado influencia positivamente em todas as etapas de uma instalação elétrica</p>
+          <button class="cta-button">Saiba mais</button>
+        </div>
+        <div class="service-card">
+          <img src="https://placehold.co/10" alt="Imagem" class="service-image" />
+          <h3 class="service-title">Projetos para padrão de entrada de energia</h3>
+          <p class="service-description">Instalação do padrão de entrada, de acordo com as concessionárias responsáveis pela distribuição de energia elétrica da sua região</p>
+          <button class="cta-button">Saiba mais</button>
         </div>
       </div>
-      <!-- Botão CTA no final -->
-      <div class="cta-container">
-        <button class="cta-button" @click="goToContact">
-          Entre em Contato
-        </button>
+
+      <!-- Nova Seção de Cards -->
+      <h2 class="section-title">Outras soluções disponíveis:</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="https://placehold.co/10" alt="Imagem" class="service-image" />
+          <h3 class="service-title">Instalações elétricas prediais</h3>
+          <p class="service-description">Realizamos instalações seguras e eficientes em ambientes residenciais e comerciais</p>
+          <button class="cta-button">Saiba mais</button>
+        </div>
+        <div class="service-card">
+          <img src="https://placehold.co/10" alt="Imagem" class="service-image" />
+          <h3 class="service-title">Manutenção preventiva</h3>
+          <p class="service-description">Evite imprevistos com um plano de manutenção elétrica adaptado às suas necessidades</p>
+          <button class="cta-button">Saiba mais</button>
+        </div>
+        <div class="service-card">
+          <img src="https://placehold.co/10" alt="Imagem" class="service-image" />
+          <h3 class="service-title">Consultoria técnica</h3>
+          <p class="service-description">Orientação especializada para otimizar a eficiência energética e garantir segurança</p>
+          <button class="cta-button">Saiba mais</button>
+        </div>
       </div>
     </div>
   </section>
@@ -25,26 +55,6 @@ export default {
   name: "ServicesSection",
   data() {
     return {
-      services: [
-        {
-          id: 1,
-          title: "Instalação Elétrica",
-          description: "Realizamos instalações elétricas completas para residências e empresas.",
-          image: "/images/instalacao-eletrica.jpg",
-        },
-        {
-          id: 2,
-          title: "Manutenção Preventiva",
-          description: "Evite problemas com manutenções regulares de alta qualidade.",
-          image: "/images/manutencao-preventiva.jpg",
-        },
-        {
-          id: 3,
-          title: "Automação Residencial",
-          description: "Transforme sua casa em um ambiente inteligente e conectado.",
-          image: "/images/automacao-residencial.jpg",
-        },
-      ],
     };
   },
   methods: {

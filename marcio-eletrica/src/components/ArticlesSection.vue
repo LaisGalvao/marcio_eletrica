@@ -1,12 +1,13 @@
 <template>
   <section class="articles">
+    <div class="container">
     <h2>Artigos Recentes</h2>
     <div class="article-list">
       <div class="article-card" v-for="article in articles" :key="article.id">
         <!-- <img :src="article.image" :alt="article.title" class="article-image" /> -->
         <div class="article-content">
           <h3>{{ article.title }}</h3>
-          <p>{{ article.content }}</p>
+          <p>{{ article.description }}</p>
           <router-link :to="{ name: 'ArticleDetail', params: { id: article.id } }" class="read-more">
             Ler mais
           </router-link>
@@ -14,6 +15,7 @@
         </div>
       </div>
     </div>
+  </div>
   </section>
 </template>
 
@@ -33,6 +35,11 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
 .articles {
   padding: 40px 20px;
   background-color: #f4f4f4;
